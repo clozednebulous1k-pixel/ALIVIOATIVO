@@ -341,13 +341,25 @@
     @keyframes forwardfold-anim { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(70deg); } }
     @keyframes wallsit-anim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(12px); } }
     @keyframes standingstretch-anim { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-12deg); } }
+    @keyframes lunge-stretch-anim { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(10px); } }
+    @keyframes hamstring-stretch-anim { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(20deg); } }
+    @keyframes calf-stretch-anim { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
+    @keyframes leg-abduction-anim { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-30deg); } }
+    @keyframes butterfly-anim { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.7); } }
+    @keyframes wall-w-anim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+    @keyframes shoulder-roll-anim { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(360deg); } }
+    @keyframes thread-needle-anim { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-15px); } }
+    @keyframes wrist-stretch-anim { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-15deg); } }
 
     /* Pause all animations by default to save CPU */
     .svg-anim-head, .svg-anim-knees, .svg-anim-bridge, .svg-anim-spine, 
     .svg-anim-kneetochest, .svg-anim-legraise, .svg-anim-childpose, 
     .svg-anim-birddogarm, .svg-anim-birddogleg, .svg-anim-cobra, 
     .svg-anim-superman, .svg-anim-chairarch, .svg-anim-forwardfold, 
-    .svg-anim-wallsit, .svg-anim-standingstretch {
+    .svg-anim-wallsit, .svg-anim-standingstretch, .svg-anim-lunge,
+    .svg-anim-hamstring, .svg-anim-calf, .svg-anim-abduction,
+    .svg-anim-butterfly, .svg-anim-wallw, .svg-anim-shoulderroll,
+    .svg-anim-threadneedle, .svg-anim-wrist {
       animation-play-state: paused;
     }
 
@@ -367,6 +379,15 @@
     .day-card:hover .svg-anim-forwardfold, .exercise-step:hover .svg-anim-forwardfold { animation: forwardfold-anim 3s infinite ease-in-out; animation-play-state: running; }
     .day-card:hover .svg-anim-wallsit, .exercise-step:hover .svg-anim-wallsit { animation: wallsit-anim 2.5s infinite ease-in-out; animation-play-state: running; }
     .day-card:hover .svg-anim-standingstretch, .exercise-step:hover .svg-anim-standingstretch { animation: standingstretch-anim 3s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-lunge, .exercise-step:hover .svg-anim-lunge { animation: lunge-stretch-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-hamstring, .exercise-step:hover .svg-anim-hamstring { animation: hamstring-stretch-anim 3s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-calf, .exercise-step:hover .svg-anim-calf { animation: calf-stretch-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-abduction, .exercise-step:hover .svg-anim-abduction { animation: leg-abduction-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-butterfly, .exercise-step:hover .svg-anim-butterfly { animation: butterfly-anim 1.5s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-wallw, .exercise-step:hover .svg-anim-wallw { animation: wall-w-anim 3s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-shoulderroll, .exercise-step:hover .svg-anim-shoulderroll { animation: shoulder-roll-anim 4s infinite linear; animation-play-state: running; }
+    .day-card:hover .svg-anim-threadneedle, .exercise-step:hover .svg-anim-threadneedle { animation: thread-needle-anim 3s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-wrist, .exercise-step:hover .svg-anim-wrist { animation: wrist-stretch-anim 2s infinite ease-in-out; animation-play-state: running; }
 
     /* Modal Player auto-play rules */
     #modal-video-anim-container .svg-anim-head { animation: neck-tilt-anim 3s infinite ease-in-out; animation-play-state: running; }
@@ -384,6 +405,15 @@
     #modal-video-anim-container .svg-anim-forwardfold { animation: forwardfold-anim 3s infinite ease-in-out; animation-play-state: running; }
     #modal-video-anim-container .svg-anim-wallsit { animation: wallsit-anim 2.5s infinite ease-in-out; animation-play-state: running; }
     #modal-video-anim-container .svg-anim-standingstretch { animation: standingstretch-anim 3s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-lunge { animation: lunge-stretch-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-hamstring { animation: hamstring-stretch-anim 3s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-calf { animation: calf-stretch-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-abduction { animation: leg-abduction-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-butterfly { animation: butterfly-anim 1.5s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-wallw { animation: wall-w-anim 3s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-shoulderroll { animation: shoulder-roll-anim 4s infinite linear; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-threadneedle { animation: thread-needle-anim 3s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-wrist { animation: wrist-stretch-anim 2s infinite ease-in-out; animation-play-state: running; }
   </style>
 </head>
 <body>
@@ -675,22 +705,22 @@
         title: "Rotina de Segunda: Descompressão Lombar",
         exercises: [
           { num: 1, name: "Torção Suave de Quadril", desc: "Deite-se, dobre os joelhos e rotacione para o lado, relaxando a musculatura lombar profunda.", time: "45" },
-          { num: 2, name: "Postura do Gato-Vaca", desc: "Em quatro apoios, flexione a coluna para cima e para baixo suavemente, mobilizando as vértebras.", time: "60" },
+          { num: 2, name: "Postura do Gato e Vaca", desc: "Em quatro apoios, flexione a coluna para cima e para baixo suavemente, mobilizando as vértebras.", time: "60" },
           { num: 3, name: "Postura da Criança Ativa", desc: "Sente-se sobre os calcanhares e estique os braços à frente, alongando o quadrado lombar.", time: "50" }
         ]
       },
       ter: {
         title: "Rotina de Terça: Liberação Cervical e Trapézios",
         exercises: [
-          { num: 1, name: "Liberação de Nuca Manual", desc: "Use a ponta dos dedos para massagear suavemente os músculos na base do crânio.", time: "60" },
+          { num: 1, name: "Liberação Ocipital Manual", desc: "Use a ponta dos dedos para massagear suavemente os músculos na base do crânio.", time: "60" },
           { num: 2, name: "Alongamento Lateral de Pescoço", desc: "Incline o pescoço lateralmente apoiando com a mão de forma leve. Sem puxar com força.", time: "45" },
-          { num: 3, name: "Rotações de Ombros para Trás", desc: "Faça movimentos circulares amplos com os ombros para relaxar a articulação clavicular.", time: "30" }
+          { num: 3, name: "Rotações Controladas de Ombros", desc: "Faça movimentos circulares amplos com os ombros para relaxar a articulação clavicular.", time: "30" }
         ]
       },
       qua: {
         title: "Rotina de Quarta: Fortalecimento Suave e Articulações",
         exercises: [
-          { num: 1, name: "Ponte com Peso Corporal", desc: "Deitado, levante o quadril contraindo os glúteos para fortalecer o core e aliviar joelhos.", time: "45" },
+          { num: 1, name: "Ponte Pélvica Isométrica", desc: "Deitado, levante o quadril contraindo os glúteos para fortalecer o core e aliviar joelhos.", time: "45" },
           { num: 2, name: "Isometria de Parede (Wall Sit)", desc: "Apoie as costas na parede e agache ligeiramente por breves segundos para fortalecer quadríceps.", time: "30" },
           { num: 3, name: "Alongamento do Flexor do Quadril", desc: "Dê um passo longo à frente flexionando o joelho de trás, liberando a pelve travada.", time: "45" }
         ]
@@ -698,72 +728,417 @@
       qui: {
         title: "Rotina de Quinta: Alinhamento Torácico e Postural",
         exercises: [
-          { num: 1, name: "Abertura de Peito na Parede", desc: "Apoie o antebraço na parede e gire o tronco opostamente para alongar peitoral e escápulas.", time: "45" },
+          { num: 1, name: "Abertura de Peitoral na Parede", desc: "Apoie o antebraço na parede e gire o tronco opostamente para alongar peitoral e escápulas.", time: "45" },
           { num: 2, name: "Extensão Torácica na Cadeira", desc: "Sentado, apoie a parte média das costas no encosto e estenda o tronco olhando para cima.", time: "45" },
-          { num: 3, name: "Postura da Cobra de Baixo Impacto", desc: "Deitado de bruços, apoie-se nos cotovelos e eleve levemente o queixo alongando o abdômen.", time: "30" }
+          { num: 3, name: "Extensão de Cobra Suave", desc: "Deitado de bruços, apoie-se nos cotovelos e eleve levemente o queixo alongando o abdômen.", time: "30" }
         ]
       }
     };
 
-    function getExerciseSVG(exerciseName, category) {
+    function getExerciseSVG(exerciseName, category, id) {
       const nameLower = exerciseName.toLowerCase();
+      let bodyType = 'standing';
+      let animType = 'stretch';
       
-      // 1. Cat-Cow (Gato e Vaca / Gato-Vaca)
-      if (nameLower.indexOf("gato") !== -1 || nameLower.indexOf("vaca") !== -1) {
-        return `
-          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
-            <line x1="15" y1="80" x2="85" y2="80" stroke="var(--color-primary)" stroke-width="3" />
-            <line x1="35" y1="80" x2="35" y2="55" stroke="#94a3b8" stroke-width="5" stroke-linecap="round" />
-            <line x1="65" y1="80" x2="65" y2="55" stroke="#94a3b8" stroke-width="5" stroke-linecap="round" />
-            <path class="svg-anim-spine" d="M35 55 Q50 55 65 55" fill="none" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" />
-            <circle cx="72" cy="50" r="6" fill="#cbd5e1" />
-          </svg>
-        `;
+      // Resolve ID using normalized name matching if it is not supplied directly
+      if (!id) {
+        const cleanName = exerciseName.toLowerCase().replace(/[^a-z0-9]/g, '');
+        for (let i = 0; i < libraryData.length; i++) {
+          const libName = libraryData[i].name.toLowerCase().replace(/[^a-z0-9]/g, '');
+          if (libName.indexOf(cleanName) !== -1 || cleanName.indexOf(libName) !== -1) {
+            id = libraryData[i].id;
+            break;
+          }
+        }
       }
       
-      // 2. Neck Stretch (Pescoço / Cervical / Nuca / Ombros / Trapézio)
-      if (category === 'pescoco' || nameLower.indexOf("pescoço") !== -1 || nameLower.indexOf("cervical") !== -1 || nameLower.indexOf("nuca") !== -1 || nameLower.indexOf("ombro") !== -1 || nameLower.indexOf("trapézio") !== -1) {
-        return `
-          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
-            <path d="M30 85 C35 70, 65 70, 70 85 Z" fill="#94a3b8" />
-            <line x1="50" y1="70" x2="50" y2="45" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round" />
-            <circle class="svg-anim-head" cx="50" cy="32" r="10" fill="var(--color-primary-light)" style="transform-origin: 50px 45px;" />
-          </svg>
-        `;
+      // Fallback to default ID if still missing
+      if (!id) id = 1;
+
+      switch(id) {
+        // LOMBAR
+        case 1: bodyType = 'lying-back'; animType = 'twist'; break;
+        case 2: bodyType = 'quadruped'; animType = 'cat-cow'; break;
+        case 3: bodyType = 'quadruped'; animType = 'child-pose'; break;
+        case 4: bodyType = 'lying-belly'; animType = 'cobra'; break;
+        case 5: bodyType = 'lying-belly'; animType = 'superman'; break;
+        case 6: bodyType = 'lying-back'; animType = 'knee-to-chest'; break;
+        case 7: bodyType = 'lying-back'; animType = 'knee-to-chest'; break;
+        case 8: bodyType = 'lying-back'; animType = 'pelvic-tilt'; break;
+        case 9: bodyType = 'seated'; animType = 'twist'; break;
+        case 10: bodyType = 'quadruped'; animType = 'bird-dog'; break;
+        case 11: bodyType = 'seated'; animType = 'side-bend'; break;
+        case 12: bodyType = 'lying-back'; animType = 'twist'; break;
+        case 13: bodyType = 'lying-belly'; animType = 'sphinx'; break;
+        case 14: bodyType = 'lying-back'; animType = 'twist'; break;
+        case 15: bodyType = 'lying-back'; animType = 'legs-up-wall'; break;
+        // CERVICAL
+        case 16: bodyType = 'seated'; animType = 'neck-tilt'; break;
+        case 17: bodyType = 'seated'; animType = 'neck-massage'; break;
+        case 18: bodyType = 'seated'; animType = 'neck-retraction'; break;
+        case 19: bodyType = 'seated'; animType = 'chair-arch'; break;
+        case 20: bodyType = 'seated'; animType = 'neck-tilt-diag'; break;
+        case 21: bodyType = 'standing'; animType = 'wall-chest-stretch'; break;
+        case 22: bodyType = 'standing'; animType = 'shoulder-roll'; break;
+        case 23: bodyType = 'standing'; animType = 'shoulder-shrug'; break;
+        case 24: bodyType = 'seated'; animType = 'neck-flexion'; break;
+        case 25: bodyType = 'seated'; animType = 'towel-neck-stretch'; break;
+        case 26: bodyType = 'quadruped'; animType = 'thread-needle'; break;
+        case 27: bodyType = 'lying-belly'; animType = 'y-raise'; break;
+        case 28: bodyType = 'standing'; animType = 'back-hug'; break;
+        case 29: bodyType = 'standing'; animType = 'triceps-stretch'; break;
+        case 30: bodyType = 'seated'; animType = 'neck-rotation'; break;
+        // JOELHOS
+        case 31: bodyType = 'lying-back'; animType = 'bridge'; break;
+        case 32: bodyType = 'standing'; animType = 'wall-sit'; break;
+        case 33: bodyType = 'standing'; animType = 'lunge-stretch'; break;
+        case 34: bodyType = 'standing'; animType = 'hamstring-stretch'; break;
+        case 35: bodyType = 'standing'; animType = 'calf-stretch'; break;
+        case 36: bodyType = 'lying-side'; animType = 'leg-abduction'; break;
+        case 37: bodyType = 'lying-back'; animType = 'straight-leg-raise'; break;
+        case 38: bodyType = 'standing'; animType = 'ankle-mobility'; break;
+        case 39: bodyType = 'lying-belly'; animType = 'frog-stretch'; break;
+        case 40: bodyType = 'standing'; animType = 'quad-stretch'; break;
+        // POSTURA
+        case 41: bodyType = 'standing'; animType = 'forward-fold'; break;
+        case 42: bodyType = 'standing'; animType = 'warrior'; break;
+        case 43: bodyType = 'seated'; animType = 'butterfly'; break;
+        case 44: bodyType = 'quadruped'; animType = 'thoracic-rotation'; break;
+        case 45: bodyType = 'standing'; animType = 'side-bend'; break;
+        case 46: bodyType = 'standing'; animType = 'standing-backbend'; break;
+        case 47: bodyType = 'lying-back'; animType = 'roller-decompression'; break;
+        case 48: bodyType = 'standing'; animType = 'wrist-stretch'; break;
+        case 49: bodyType = 'seated'; animType = 'arm-back-stretch'; break;
+        case 50: bodyType = 'standing'; animType = 'wall-w-stretch'; break;
       }
-      
-      // 3. Glute Bridge (Ponte / Pélvica / Joelho / Articulação / Quadril)
-      if (category === 'articulacao' || nameLower.indexOf("ponte") !== -1 || nameLower.indexOf("pélvica") !== -1 || nameLower.indexOf("joelho") !== -1 || nameLower.indexOf("articulação") !== -1 || nameLower.indexOf("quadril") !== -1) {
+
+      // 1. Lying Back templates
+      if (bodyType === 'lying-back') {
+        if (animType === 'bridge') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+              <circle cx="25" cy="74" r="6" fill="#94a3b8" />
+              <g class="svg-anim-bridge" style="transform-origin: 25px 74px;">
+                <line x1="31" y1="74" x2="60" y2="74" stroke="var(--color-primary-light)" stroke-width="8" stroke-linecap="round" />
+                <line x1="60" y1="74" x2="72" y2="80" stroke="#cbd5e1" stroke-width="6" stroke-linecap="round" />
+              </g>
+            </svg>
+          `;
+        }
+        if (animType === 'twist') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+              <circle cx="20" cy="75" r="6" fill="#94a3b8" />
+              <line x1="26" y1="75" x2="60" y2="75" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round" />
+              <path class="svg-anim-knees" d="M55 75 L70 55 L82 75" fill="none" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" style="transform-origin: 55px 75px;" />
+            </svg>
+          `;
+        }
+        if (animType === 'knee-to-chest') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+              <circle cx="20" cy="74" r="6" fill="#94a3b8" />
+              <line x1="26" y1="74" x2="52" y2="74" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round" />
+              <path class="svg-anim-kneetochest" d="M52 74 Q68 50 58 64" fill="none" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" style="transform-origin: 52px 74px;" />
+            </svg>
+          `;
+        }
+        if (animType === 'legs-up-wall') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <line x1="75" y1="15" x2="75" y2="80" stroke="#475569" stroke-width="3" />
+              <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+              <circle cx="20" cy="74" r="6" fill="#94a3b8" />
+              <line x1="26" y1="74" x2="75" y2="74" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round" />
+              <line class="svg-anim-wrist" x1="75" y1="74" x2="75" y2="35" stroke="var(--color-primary-light)" stroke-width="7" stroke-linecap="round" style="transform-origin: 75px 74px;" />
+            </svg>
+          `;
+        }
+        if (animType === 'straight-leg-raise') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+              <circle cx="20" cy="75" r="6" fill="#94a3b8" />
+              <line x1="26" y1="75" x2="55" y2="75" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round" />
+              <line class="svg-anim-legraise" x1="55" y1="75" x2="85" y2="75" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" style="transform-origin: 55px 75px;" />
+            </svg>
+          `;
+        }
+        if (animType === 'roller-decompression') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+              <circle cx="50" cy="76" r="6" fill="var(--color-accent)" />
+              <circle cx="25" cy="74" r="6" fill="#cbd5e1" />
+              <path class="svg-anim-spine" d="M31 74 Q50 62 68 74" fill="none" stroke="var(--color-primary-light)" stroke-width="7" stroke-linecap="round" />
+              <line x1="68" y1="74" x2="82" y2="80" stroke="#94a3b8" stroke-width="6" />
+            </svg>
+          `;
+        }
+        // Default Lying Back
         return `
           <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
             <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="3" />
-            <circle cx="25" cy="74" r="6" fill="#94a3b8" />
-            <g class="svg-anim-bridge" style="transform-origin: 25px 74px;">
-              <line x1="31" y1="74" x2="60" y2="74" stroke="var(--color-primary-light)" stroke-width="8" stroke-linecap="round" />
-              <line x1="60" y1="74" x2="72" y2="80" stroke="#cbd5e1" stroke-width="6" stroke-linecap="round" />
+            <circle cx="20" cy="74" r="6" fill="#94a3b8" />
+            <line class="svg-anim-bridge" x1="26" y1="74" x2="75" y2="74" stroke="var(--color-primary-light)" stroke-width="7" stroke-linecap="round" style="transform-origin: 26px 74px;" />
+          </svg>
+        `;
+      }
+      
+      // 2. Quadruped (all fours) templates
+      if (bodyType === 'quadruped') {
+        if (animType === 'cat-cow') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <line x1="15" y1="80" x2="85" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+              <line x1="35" y1="80" x2="35" y2="55" stroke="#94a3b8" stroke-width="5" stroke-linecap="round" />
+              <line x1="65" y1="80" x2="65" y2="55" stroke="#94a3b8" stroke-width="5" stroke-linecap="round" />
+              <path class="svg-anim-spine" d="M35 55 Q50 55 65 55" fill="none" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" />
+              <circle cx="72" cy="50" r="6" fill="#cbd5e1" />
+            </svg>
+          `;
+        }
+        if (animType === 'child-pose') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+              <path class="svg-anim-childpose" d="M30 75 Q45 60 70 75" fill="none" stroke="var(--color-primary-light)" stroke-width="7" stroke-linecap="round" />
+              <circle class="svg-anim-childhead" cx="72" cy="74" r="5" fill="#cbd5e1" />
+            </svg>
+          `;
+        }
+        if (animType === 'bird-dog') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <line x1="15" y1="80" x2="85" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+              <line x1="40" y1="80" x2="40" y2="55" stroke="#94a3b8" stroke-width="5" stroke-linecap="round" />
+              <line x1="60" y1="80" x2="60" y2="55" stroke="#94a3b8" stroke-width="5" stroke-linecap="round" />
+              <line class="svg-anim-birddogarm" x1="60" y1="55" x2="80" y2="55" stroke="var(--color-primary-light)" stroke-width="5" stroke-linecap="round" style="transform-origin: 60px 55px;" />
+              <line class="svg-anim-birddogleg" x1="40" y1="55" x2="20" y2="55" stroke="var(--color-primary-light)" stroke-width="5" stroke-linecap="round" style="transform-origin: 40px 55px;" />
+              <line x1="40" y1="55" x2="60" y2="55" stroke="#e2e8f0" stroke-width="7" />
+              <circle cx="67" cy="48" r="5" fill="#cbd5e1" />
+            </svg>
+          `;
+        }
+        if (animType === 'thread-needle') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <line x1="15" y1="80" x2="85" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+              <line x1="35" y1="80" x2="35" y2="55" stroke="#94a3b8" stroke-width="5" />
+              <line x1="65" y1="80" x2="65" y2="55" stroke="#94a3b8" stroke-width="5" />
+              <line x1="35" y1="55" x2="65" y2="55" stroke="#e2e8f0" stroke-width="7" />
+              <circle cx="70" cy="50" r="5" fill="#cbd5e1" />
+              <line class="svg-anim-threadneedle" x1="50" y1="55" x2="30" y2="70" stroke="var(--color-primary-light)" stroke-width="5" stroke-linecap="round" />
+            </svg>
+          `;
+        }
+        // Default quadruped / thoracic rotation
+        return `
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <line x1="15" y1="80" x2="85" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+            <line x1="35" y1="80" x2="35" y2="55" stroke="#94a3b8" stroke-width="5" />
+            <line x1="65" y1="80" x2="65" y2="55" stroke="#94a3b8" stroke-width="5" />
+            <line x1="35" y1="55" x2="65" y2="55" stroke="#e2e8f0" stroke-width="7" />
+            <circle cx="70" cy="50" r="5" fill="#cbd5e1" />
+            <line class="svg-anim-birddogarm" x1="65" y1="50" x2="55" y2="35" stroke="var(--color-primary-light)" stroke-width="4" stroke-linecap="round" style="transform-origin: 65px 50px;" />
+          </svg>
+        `;
+      }
+      
+      // 3. Lying Belly templates
+      if (bodyType === 'lying-belly') {
+        if (animType === 'cobra' || animType === 'sphinx') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+              <line x1="75" y1="78" x2="45" y2="78" stroke="#94a3b8" stroke-width="8" stroke-linecap="round" />
+              <line class="svg-anim-cobra" x1="45" y1="78" x2="25" y2="55" stroke="var(--color-primary-light)" stroke-width="7" stroke-linecap="round" style="transform-origin: 45px 78px;" />
+              <circle class="svg-anim-cobrahead" cx="22" cy="48" r="6" fill="#cbd5e1" style="transform-origin: 45px 78px;" />
+            </svg>
+          `;
+        }
+        if (animType === 'superman') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="2" />
+              <g class="svg-anim-superman" style="transform-origin: 50px 75px;">
+                <line x1="35" y1="75" x2="65" y2="75" stroke="#e2e8f0" stroke-width="8" stroke-linecap="round" />
+                <line x1="65" y1="75" x2="85" y2="70" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" />
+                <line x1="35" y1="75" x2="15" y2="70" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" />
+                <circle cx="70" cy="70" r="5" fill="#cbd5e1" />
+              </g>
+            </svg>
+          `;
+        }
+        // Frog Stretch
+        return `
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="2" />
+            <path class="svg-anim-butterfly" d="M25 76 Q50 64 75 76" fill="none" stroke="var(--color-primary-light)" stroke-width="7" stroke-linecap="round" style="transform-origin: 50px 64px;" />
+            <circle cx="50" cy="62" r="6" fill="#cbd5e1" />
+          </svg>
+        `;
+      }
+      
+      // 4. Lying Side template
+      if (bodyType === 'lying-side') {
+        return `
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+            <circle cx="20" cy="74" r="6" fill="#94a3b8" />
+            <line x1="26" y1="74" x2="60" y2="74" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round" />
+            <!-- Raised side leg abduction -->
+            <line class="svg-anim-abduction" x1="60" y1="74" x2="88" y2="74" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" style="transform-origin: 60px 74px;" />
+          </svg>
+        `;
+      }
+      
+      // 5. Seated templates
+      if (bodyType === 'seated') {
+        if (animType === 'neck-tilt' || animType === 'neck-tilt-diag') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <path d="M30 85 C35 70, 65 70, 70 85 Z" fill="#94a3b8" />
+              <line x1="50" y1="70" x2="50" y2="45" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round" />
+              <circle class="svg-anim-head" cx="50" cy="32" r="10" fill="var(--color-primary-light)" style="transform-origin: 50px 45px;" />
+            </svg>
+          `;
+        }
+        if (animType === 'chair-arch') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <line x1="35" y1="85" x2="35" y2="50" stroke="#475569" stroke-width="4" />
+              <line x1="35" y1="62" x2="65" y2="62" stroke="#475569" stroke-width="4" />
+              <g class="svg-anim-chairarch" style="transform-origin: 45px 62px;">
+                <line x1="45" y1="85" x2="45" y2="62" stroke="#94a3b8" stroke-width="7" />
+                <line x1="45" y1="62" x2="45" y2="38" stroke="var(--color-primary-light)" stroke-width="7" stroke-linecap="round" />
+                <circle cx="45" cy="30" r="6" fill="#cbd5e1" />
+              </g>
+            </svg>
+          `;
+        }
+        if (animType === 'butterfly') {
+          return `
+            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+              <path d="M30 85 C35 70, 65 70, 70 85 Z" fill="#94a3b8" />
+              <path class="svg-anim-butterfly" d="M25 82 Q50 68 75 82" fill="none" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" style="transform-origin: 50px 68px;" />
+              <circle cx="50" cy="58" r="6" fill="#cbd5e1" />
+            </svg>
+          `;
+        }
+        // Default seated twist/stretches
+        return `
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <line x1="35" y1="85" x2="35" y2="55" stroke="#475569" stroke-width="3" />
+            <line x1="35" y1="65" x2="60" y2="65" stroke="#475569" stroke-width="3" />
+            <g class="svg-anim-chairarch" style="transform-origin: 45px 65px;">
+              <line x1="45" y1="85" x2="45" y2="65" stroke="#94a3b8" stroke-width="7" />
+              <line x1="45" y1="65" x2="45" y2="40" stroke="var(--color-primary-light)" stroke-width="7" stroke-linecap="round" />
+              <circle cx="45" cy="32" r="6" fill="#cbd5e1" />
             </g>
           </svg>
         `;
       }
       
-      // 4. Lying Hip Twist (Torção)
-      if (nameLower.indexOf("torção") !== -1) {
+      // 6. Standing templates
+      if (animType === 'forward-fold') {
         return `
           <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
-            <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="3" />
-            <circle cx="20" cy="75" r="6" fill="#94a3b8" />
-            <line x1="26" y1="75" x2="60" y2="75" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round" />
-            <path class="svg-anim-knees" d="M55 75 L70 55 L82 75" fill="none" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" style="transform-origin: 55px 75px;" />
+            <line x1="15" y1="85" x2="85" y2="85" stroke="var(--color-primary)" stroke-width="3" />
+            <line x1="45" y1="85" x2="45" y2="55" stroke="#94a3b8" stroke-width="6" stroke-linecap="round" />
+            <g class="svg-anim-forwardfold" style="transform-origin: 45px 55px;">
+              <line x1="45" y1="55" x2="45" y2="28" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" />
+              <circle cx="45" cy="20" r="6" fill="#cbd5e1" />
+            </g>
           </svg>
         `;
       }
-      
-      // 5. Default Spine stretch representation (for all other back/spine/posture exercises)
+      if (animType === 'wall-sit') {
+        return `
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <line x1="30" y1="15" x2="30" y2="85" stroke="#475569" stroke-width="3" />
+            <g class="svg-anim-wallsit">
+              <line x1="33" y1="50" x2="47" y2="50" stroke="var(--color-primary-light)" stroke-width="7" stroke-linecap="round" />
+              <line x1="47" y1="50" x2="53" y2="65" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round" />
+              <line x1="33" y1="50" x2="33" y2="30" stroke="#94a3b8" stroke-width="6" />
+              <circle cx="33" cy="22" r="5" fill="#cbd5e1" />
+            </g>
+          </svg>
+        `;
+      }
+      if (animType === 'hamstring-stretch') {
+        return `
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <line x1="15" y1="85" x2="85" y2="85" stroke="var(--color-primary)" stroke-width="3" />
+            <line x1="35" y1="85" x2="45" y2="60" stroke="#94a3b8" stroke-width="5" />
+            <line x1="45" y1="60" x2="68" y2="85" stroke="#cbd5e1" stroke-width="5" />
+            <g class="svg-anim-hamstring" style="transform-origin: 45px 60px;">
+              <line x1="45" y1="60" x2="55" y2="30" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" />
+              <circle cx="58" cy="22" r="5" fill="#cbd5e1" />
+            </g>
+          </svg>
+        `;
+      }
+      if (animType === 'lunge-stretch') {
+        return `
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <line x1="10" y1="85" x2="90" y2="85" stroke="var(--color-primary)" stroke-width="3" />
+            <g class="svg-anim-lunge">
+              <line x1="45" y1="85" x2="65" y2="70" stroke="#94a3b8" stroke-width="5" />
+              <line x1="45" y1="85" x2="30" y2="85" stroke="#94a3b8" stroke-width="5" />
+              <line x1="65" y1="70" x2="55" y2="40" stroke="var(--color-primary-light)" stroke-width="6" />
+              <circle cx="55" cy="32" r="5" fill="#cbd5e1" />
+            </g>
+          </svg>
+        `;
+      }
+      if (animType === 'calf-stretch') {
+        return `
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <line x1="75" y1="15" x2="75" y2="85" stroke="#475569" stroke-width="3" />
+            <line x1="10" y1="85" x2="90" y2="85" stroke="var(--color-primary)" stroke-width="3" />
+            <g class="svg-anim-calf">
+              <line x1="40" y1="85" x2="60" y2="60" stroke="#94a3b8" stroke-width="5" />
+              <line x1="60" y1="60" x2="75" y2="60" stroke="var(--color-primary-light)" stroke-width="5" />
+              <line x1="60" y1="60" x2="60" y2="35" stroke="var(--color-primary-light)" stroke-width="6" />
+              <circle cx="60" cy="27" r="5" fill="#cbd5e1" />
+            </g>
+          </svg>
+        `;
+      }
+      if (animType === 'wall-w-stretch') {
+        return `
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <line x1="30" y1="15" x2="30" y2="85" stroke="#475569" stroke-width="3" />
+            <line x1="45" y1="85" x2="45" y2="58" stroke="#94a3b8" stroke-width="6" />
+            <circle cx="45" cy="24" r="6" fill="#cbd5e1" />
+            <path class="svg-anim-wallw" d="M35 38 L45 48 L55 38" fill="none" stroke="var(--color-primary-light)" stroke-width="5" stroke-linecap="round" style="transform-origin: 45px 48px;" />
+          </svg>
+        `;
+      }
+      if (animType === 'wrist-stretch') {
+        return `
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <line x1="15" y1="85" x2="85" y2="85" stroke="var(--color-primary)" stroke-width="3" />
+            <line x1="50" y1="85" x2="50" y2="58" stroke="#94a3b8" stroke-width="6" />
+            <circle cx="50" cy="24" r="6" fill="#cbd5e1" />
+            <line x1="50" y1="50" x2="70" y2="50" stroke="#cbd5e1" stroke-width="5" />
+            <line class="svg-anim-wrist" x1="70" y1="50" x2="70" y2="62" stroke="var(--color-primary-light)" stroke-width="4" stroke-linecap="round" style="transform-origin: 70px 50px;" />
+          </svg>
+        `;
+      }
+      // Default Standing Stretch (e.g. side-bend, shoulder shrug, warrior, stretch)
       return `
         <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
-          <line x1="15" y1="80" x2="85" y2="80" stroke="var(--color-primary)" stroke-width="3" />
-          <path class="svg-anim-spine" d="M25 78 C30 55, 60 55, 75 78 Z" fill="none" stroke="var(--color-primary-light)" stroke-width="5" stroke-linecap="round" />
-          <circle cx="75" cy="70" r="5" fill="#94a3b8" />
+          <line x1="15" y1="85" x2="85" y2="85" stroke="var(--color-primary)" stroke-width="3" />
+          <line x1="50" y1="85" x2="50" y2="58" stroke="#94a3b8" stroke-width="6" stroke-linecap="round" />
+          <g class="svg-anim-standingstretch" style="transform-origin: 50px 58px;">
+            <line x1="50" y1="58" x2="50" y2="32" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" />
+            <circle cx="50" cy="24" r="6" fill="#cbd5e1" />
+          </g>
         </svg>
       `;
     }
