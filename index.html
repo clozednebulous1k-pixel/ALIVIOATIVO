@@ -6,6 +6,22 @@
   <title>Alívio Imediato - Adeus Dores Físicas em 10 Minutos por Dia</title>
   <meta name="description" content="Descubra o método simples de exercícios em casa para aliviar dores nas costas, pescoço e articulações de forma rápida e segura. Pagamento único com acesso vitalício.">
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=f.fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '914786401641063');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=914786401641063&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -811,8 +827,11 @@
       if (activeDetail) activeDetail.classList.add('active');
     }
 
-    // Redirect directly to the live Hotmart payment page
+    // Redirect directly to the live Hotmart payment page and send InitiateCheckout pixel event
     function openCheckout() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout');
+      }
       window.location.href = "https://go.hotmart.com/I106762076V?dp=1";
     }
 
