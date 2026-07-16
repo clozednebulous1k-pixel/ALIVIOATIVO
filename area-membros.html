@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área de Membros - Alívio Ativo</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Members Area Custom Overrides */
+    .dashboard-container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: 100vh;
+      background: var(--color-bg-dark);
+      color: #fff;
+    }
+    
+    .sidebar {
+      background: var(--color-bg-dark-accent);
+      border-right: 1px solid rgba(255,255,255,0.05);
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .sidebar-brand {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    
+    .sidebar-brand span {
+      color: var(--color-primary-light);
+    }
+    
+    .menu-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .menu-item-btn {
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      padding: 14px 18px;
+      border-radius: var(--border-radius-sm);
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: var(--transition-fast);
+    }
+    
+    .menu-item-btn:hover, .menu-item-btn.active {
+      color: #fff;
+      background: rgba(20, 184, 166, 0.1);
+    }
+    
+    .menu-item-btn.active {
+      border-left: 4px solid var(--color-primary-light);
+      background: rgba(20, 184, 166, 0.15);
+      color: var(--color-primary-light);
+    }
+    
+    .user-profile {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .user-avatar-small {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #fff;
+    }
+    
+    .user-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    
+    .user-role {
+      font-size: 0.7rem;
+      color: #64748b;
+    }
+    
+    .main-content {
+      padding: 40px;
+      overflow-y: auto;
+      height: 100vh;
+    }
+    
+    .content-section {
+      display: none;
+      animation: fadeIn 0.4s ease forwards;
+    }
+    
+    .content-section.active {
+      display: block;
+    }
+    
+    /* Program Tab Styles */
+    .day-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .day-card {
+      background: var(--color-bg-dark-accent);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,0.03);
+      cursor: pointer;
+      transition: var(--transition-normal);
+    }
+    
+    .day-card:hover, .day-card.active {
+      border-color: var(--color-primary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .day-card.active {
+      background: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(13, 148, 136, 0.2) 100%);
+    }
+    
+    .day-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--color-primary-light);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    
+    .day-focus {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    
+    .day-duration {
+      font-size: 0.8rem;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .routine-viewer {
+      margin-top: 30px;
+      background: var(--color-bg-dark-accent);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    
+    .exercise-step {
+      display: grid;
+      grid-template-columns: 50px 100px 1fr 160px;
+      gap: 20px;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .exercise-step:last-child {
+      border-bottom: none;
+    }
+    
+    .exercise-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(20, 184, 166, 0.1);
+      color: var(--color-primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    
+    .exercise-info h4 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    
+    .exercise-info p {
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+    
+    /* Checklist styles */
+    .checklist-container {
+      background: var(--color-bg-dark-accent);
+      border-radius: var(--border-radius-lg);
+      padding: 30px;
+      margin-top: 24px;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    
+    .checklist-progress-bar {
+      height: 12px;
+      background: #334155;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-primary-light), var(--color-secondary));
+      width: 0%;
+      transition: width var(--transition-normal);
+    }
+    
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.02);
+      border-radius: var(--border-radius-md);
+      margin-bottom: 12px;
+      border: 1px solid rgba(255,255,255,0.03);
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+    
+    .checklist-item:hover {
+      background: rgba(255,255,255,0.04);
+    }
+    
+    .checklist-checkbox {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      border: 2px solid #64748b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: transparent;
+      transition: var(--transition-fast);
+    }
+    
+    .checklist-item.checked .checklist-checkbox {
+      background: var(--color-primary-light);
+      border-color: var(--color-primary-light);
+      color: #000;
+    }
+    
+    .checklist-item.checked span {
+      text-decoration: line-through;
+      color: #64748b;
+    }
+    
+    /* Responsive Media */
+    @media (max-width: 768px) {
+      .dashboard-container {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        padding: 20px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+      .sidebar-brand {
+        margin-bottom: 20px;
+      }
+      .menu-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 8px;
+      }
+      .menu-item-btn {
+        white-space: nowrap;
+        padding: 10px 14px;
+      }
+      .user-profile {
+        display: none;
+      }
+      .main-content {
+        padding: 20px;
+        height: auto;
+      }
+      .exercise-step {
+        grid-template-columns: 40px 80px 1fr;
+        gap: 12px;
+      }
+      .exercise-step button {
+        grid-column: span 3;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-brand">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="var(--color-primary-light)"/>
+          </svg>
+          Alívio<span>Ativo</span>
+        </div>
+        
+        <ul class="menu-list">
+          <li>
+            <button class="menu-item-btn active" id="menu-cronograma" onclick="switchSection('cronograma')">
+              📅 Cronograma Diário
+            </button>
+          </li>
+          <li>
+            <button class="menu-item-btn" id="menu-videos" onclick="switchSection('videos')">
+              🎬 Videoaulas Rápidas
+            </button>
+          </li>
+          <li>
+            <button class="menu-item-btn" id="menu-habitos" onclick="switchSection('habitos')">
+              💡 Hábitos Anti-Dor
+            </button>
+          </li>
+          <li>
+            <button class="menu-item-btn" id="menu-download" onclick="switchSection('download')">
+              📥 Baixar Guia PDF
+            </button>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="user-profile">
+        <div class="user-avatar-small">AM</div>
+        <div>
+          <div class="user-name">Área de Teste</div>
+          <div class="user-role">Acesso Gratuito</div>
+        </div>
+      </div>
+    </aside>
+    
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Section: Cronograma -->
+      <section class="content-section active" id="sec-cronograma">
+        <h2>Cronograma Prático de Exercícios</h2>
+        <p>Selecione o dia da semana para ver a rotina recomendada focada no alívio de tensões:</p>
+        
+        <div class="day-grid">
+          <div class="day-card active" id="day-seg" onclick="selectDay('seg')">
+            <div class="day-title">Segunda</div>
+            <div class="day-focus">Coluna Lombar</div>
+            <div class="day-duration">⏱ 10 min</div>
+          </div>
+          <div class="day-card" id="day-ter" onclick="selectDay('ter')">
+            <div class="day-title">Terça</div>
+            <div class="day-focus">Pescoço e Ombros</div>
+            <div class="day-duration">⏱ 8 min</div>
+          </div>
+          <div class="day-card" id="day-qua" onclick="selectDay('qua')">
+            <div class="day-title">Quarta</div>
+            <div class="day-focus">Articulações</div>
+            <div class="day-duration">⏱ 12 min</div>
+          </div>
+          <div class="day-card" id="day-qui" onclick="selectDay('qui')">
+            <div class="day-title">Quinta</div>
+            <div class="day-focus">Costas / Torácica</div>
+            <div class="day-duration">⏱ 10 min</div>
+          </div>
+        </div>
+        
+        <div class="routine-viewer" id="routine-details">
+          <!-- Monday (default) details -->
+          <h3 style="margin-bottom: 20px; color: var(--color-primary-light);" id="routine-day-name">Rotina de Segunda: Descompressão Lombar</h3>
+          
+          <div class="exercises-list" id="routine-exercises">
+            <div class="exercise-step">
+              <div class="exercise-num">1</div>
+              <div class="exercise-img-wrapper" style="width: 100px; height: 70px; border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <img src="exercise_lombar.png" alt="Torção Suave de Quadril" style="width: 100%; height: 100%; object-fit: contain;">
+              </div>
+              <div class="exercise-info">
+                <h4>Torção Suave de Quadril</h4>
+                <p>Deite-se, dobre os joelhos e rotacione para o lado, relaxando a musculatura lombar profunda.</p>
+              </div>
+              <button onclick="previewExercise('Torção de Quadril', '45')" class="btn-secondary" style="font-size: 0.85rem; padding: 8px 16px; width: 100%;">Ver Demonstração</button>
+            </div>
+            
+            <div class="exercise-step">
+              <div class="exercise-num">2</div>
+              <div class="exercise-img-wrapper" style="width: 100px; height: 70px; border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <img src="exercise_lombar.png" alt="Postura do Gato-Vaca" style="width: 100%; height: 100%; object-fit: contain;">
+              </div>
+              <div class="exercise-info">
+                <h4>Postura do Gato-Vaca</h4>
+                <p>Em quatro apoios, flexione a coluna para cima e para baixo suavemente, mobilizando as vértebras.</p>
+              </div>
+              <button onclick="previewExercise('Gato-Vaca', '60')" class="btn-secondary" style="font-size: 0.85rem; padding: 8px 16px; width: 100%;">Ver Demonstração</button>
+            </div>
+            
+            <div class="exercise-step">
+              <div class="exercise-num">3</div>
+              <div class="exercise-img-wrapper" style="width: 100px; height: 70px; border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <img src="exercise_lombar.png" alt="Postura da Criança Ativa" style="width: 100%; height: 100%; object-fit: contain;">
+              </div>
+              <div class="exercise-info">
+                <h4>Postura da Criança Ativa</h4>
+                <p>Sente-se sobre os calcanhares e estique os braços à frente, alongando o quadrado lombar.</p>
+              </div>
+              <button onclick="previewExercise('Postura da Criança', '50')" class="btn-secondary" style="font-size: 0.85rem; padding: 8px 16px; width: 100%;">Ver Demonstração</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Section: Videos -->
+      <section class="content-section" id="sec-videos">
+        <h2>Videoaulas de Demonstração</h2>
+        <p>Abaixo estão as demonstrações de postura para que você execute os movimentos de forma correta e sem riscos.</p>
+        
+        <div class="day-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <div class="day-card" onclick="previewExercise('Alinhamento Cervical Avançado', '60')">
+            <div style="background:#0f172a; height: 140px; border-radius: var(--border-radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.05);">
+              🎬 Assistir Prévia
+            </div>
+            <div class="day-focus">Ajuste e Alinhamento Cervical</div>
+            <p style="font-size: 0.85rem; color: #64748b;">Elimine a tensão acumulada na base da nuca e trapézios.</p>
+          </div>
+          
+          <div class="day-card" onclick="previewExercise('Mobilidade de Quadril e Lombar', '90')">
+            <div style="background:#0f172a; height: 140px; border-radius: var(--border-radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.05);">
+              🎬 Assistir Prévia
+            </div>
+            <div class="day-focus">Abertura de Quadril & Psoas</div>
+            <p style="font-size: 0.85rem; color: #64748b;">A raiz secreta de muitas dores nas costas baixas.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Section: Habitos -->
+      <section class="content-section" id="sec-habitos">
+        <h2>Painel de Hábitos Saudáveis</h2>
+        <p>Ajuste suas práticas diárias para evitar que a dor retorne. Marque os hábitos concluídos para acompanhar sua pontuação de bem-estar:</p>
+        
+        <div class="checklist-container">
+          <div style="display:flex; justify-content:space-between; margin-bottom: 10px;">
+            <span>Pontuação de Hábitos Posturais</span>
+            <span id="progress-percentage">0% concluído</span>
+          </div>
+          <div class="checklist-progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          
+          <div class="checklist-item" onclick="toggleHabit(this)">
+            <div class="checklist-checkbox">✓</div>
+            <span>Beber 2.5L de água para hidratar os discos intervertebrais</span>
+          </div>
+          
+          <div class="checklist-item" onclick="toggleHabit(this)">
+            <div class="checklist-checkbox">✓</div>
+            <span>Fazer pausa ativa de 2 minutos para alongar a cada 2h de trabalho</span>
+          </div>
+          
+          <div class="checklist-item" onclick="toggleHabit(this)">
+            <div class="checklist-checkbox">✓</div>
+            <span>Ajustar a altura da tela do computador para evitar inclinação do pescoço</span>
+          </div>
+          
+          <div class="checklist-item" onclick="toggleHabit(this)">
+            <div class="checklist-checkbox">✓</div>
+            <span>Dormir de lado com um travesseiro leve apoiando os joelhos</span>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Section: Download -->
+      <section class="content-section" id="sec-download">
+        <h2>Download do Material de Apoio</h2>
+        <p>Baixe o arquivo PDF completo para ler no celular mesmo quando estiver sem internet.</p>
+        
+        <div style="background: var(--color-bg-dark-accent); border-radius: var(--border-radius-lg); padding: 40px; text-align: center; border: 1px solid rgba(255,255,255,0.03); margin-top: 30px;">
+          <div style="font-size: 4rem; margin-bottom: 20px;">📄</div>
+          <h3>Manual Completo Alívio Ativo (PDF)</h3>
+          <p style="margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto;">Contém todas as fotos demonstrativas de postura, tabelas de exercícios e o diário de hábitos para impressão rápida.</p>
+          <a href="manual.html" target="_blank" class="btn-primary">Acessar e Baixar Manual (PDF)</a>
+        </div>
+      </section>
+      
+    </main>
+  </div>
+
+  <!-- EXERCISE MODAL POPUP (REUSED FROM LANDING) -->
+  <div class="checkout-modal" id="video-modal">
+    <div class="checkout-card" style="max-width: 650px; padding: 30px; background: #fff; color: var(--color-text-dark);">
+      <button class="checkout-close" onclick="closeVideoModal()">&times;</button>
+      <div class="checkout-header" style="text-align: left; margin-bottom: 20px;">
+        <span class="badge-green" style="margin-bottom: 8px;">Demonstração de Postura</span>
+        <h3 id="modal-video-title" style="font-size: 1.35rem; color: var(--color-text-dark);">Exercício</h3>
+      </div>
+      
+      <div style="background: #0f172a; border-radius: var(--border-radius-md); overflow: hidden; aspect-ratio: 16/9; position: relative; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,0.05);">
+        <!-- Exercise Image Illustration Preview -->
+        <img id="modal-video-img" src="" alt="Demonstração" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: contain; opacity: 0.35; z-index: 0; pointer-events: none;">
+        
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; color: #fff; z-index: 1; position: relative;">
+          <div style="border: 2px dashed rgba(20, 184, 166, 0.4); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: pulse-slow 3s infinite ease-in-out; margin-bottom: 12px; background: rgba(15, 23, 42, 0.6);">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="var(--color-primary-light)" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 16H9V8H11V16ZM15 16H13V8H15V16Z"/>
+            </svg>
+          </div>
+          <span id="modal-video-exercise-name" style="font-size: 1rem; font-weight: 700; color: #f8fafc; text-shadow: 0 2px 4px rgba(0,0,0,0.8); text-align: center;">Instruções na tela...</span>
+          <span style="font-size: 0.8rem; color: var(--color-primary-light); margin-top: 4px; font-weight: 700; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Executar por: <span id="timer">45</span>s restantes</span>
+        </div>
+        
+        <div style="background: rgba(15, 23, 42, 0.95); padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: #94a3b8;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <span style="color: var(--color-primary-light); font-weight: 700;">REPRODUZINDO</span>
+            <span>00:10 / 01:30</span>
+          </div>
+          <div style="flex: 1; margin: 0 20px; height: 6px; background: #334155; border-radius: 3px; position: relative; overflow: hidden;">
+            <div id="video-progress" style="position: absolute; top:0; left:0; height: 100%; width: 12.5%; background: var(--color-primary-light);"></div>
+          </div>
+          <span>Qualidade: 1080p HD</span>
+        </div>
+      </div>
+      
+      <div style="margin-top: 20px;">
+        <h4 style="font-size: 1rem; color: var(--color-text-dark); margin-bottom: 8px;">Dica do Fisioterapeuta:</h4>
+        <p style="font-size: 0.85rem; color: var(--color-text-muted);">Mantenha respirações ritmadas pelo nariz. Nunca force a amplitude de movimento até sentir pontadas de dor aguda. Respeite as limitações do seu corpo.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Switch Side Menu Sections
+    function switchSection(sectionId) {
+      // 1. Update menu active state
+      const menuBtns = document.querySelectorAll('.menu-item-btn');
+      menuBtns.forEach(btn => btn.classList.remove('active'));
+      document.getElementById('menu-' + sectionId).classList.add('active');
+      
+      // 2. Hide and show sections
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById('sec-' + sectionId).classList.add('active');
+    }
+
+    // Cronograma: Day Switching
+    const dayData = {
+      seg: {
+        title: "Rotina de Segunda: Descompressão Lombar",
+        exercises: [
+          { num: 1, name: "Torção Suave de Quadril", desc: "Deite-se, dobre os joelhos e rotacione para o lado, relaxando a musculatura lombar profunda.", time: "45" },
+          { num: 2, name: "Postura do Gato-Vaca", desc: "Em quatro apoios, flexione a coluna para cima e para baixo suavemente, mobilizando as vértebras.", time: "60" },
+          { num: 3, name: "Postura da Criança Ativa", desc: "Sente-se sobre os calcanhares e estique os braços à frente, alongando o quadrado lombar.", time: "50" }
+        ]
+      },
+      ter: {
+        title: "Rotina de Terça: Liberação Cervical e Trapézios",
+        exercises: [
+          { num: 1, name: "Liberação de Nuca Manual", desc: "Use a ponta dos dedos para massagear suavemente os músculos na base do crânio.", time: "60" },
+          { num: 2, name: "Alongamento Lateral de Pescoço", desc: "Incline o pescoço lateralmente apoiando com a mão de forma leve. Sem puxar com força.", time: "45" },
+          { num: 3, name: "Rotações de Ombros para Trás", desc: "Faça movimentos circulares amplos com os ombros para relaxar a articulação clavicular.", time: "30" }
+        ]
+      },
+      qua: {
+        title: "Rotina de Quarta: Fortalecimento Suave e Articulações",
+        exercises: [
+          { num: 1, name: "Ponte com Peso Corporal", desc: "Deitado, levante o quadril contraindo os glúteos para fortalecer o core e aliviar joelhos.", time: "45" },
+          { num: 2, name: "Isometria de Parede (Wall Sit)", desc: "Apoie as costas na parede e agache ligeiramente por breves segundos para fortalecer quadríceps.", time: "30" },
+          { num: 3, name: "Alongamento do Flexor do Quadril", desc: "Dê um passo longo à frente flexionando o joelho de trás, liberando a pelve travada.", time: "45" }
+        ]
+      },
+      qui: {
+        title: "Rotina de Quinta: Alinhamento Torácico e Postural",
+        exercises: [
+          { num: 1, name: "Abertura de Peito na Parede", desc: "Apoie o antebraço na parede e gire o tronco opostamente para alongar peitoral e escápulas.", time: "45" },
+          { num: 2, name: "Extensão Torácica na Cadeira", desc: "Sentado, apoie a parte média das costas no encosto e estenda o tronco olhando para cima.", time: "45" },
+          { num: 3, name: "Postura da Cobra de Baixo Impacto", desc: "Deitado de bruços, apoie-se nos cotovelos e eleve levemente o queixo alongando o abdômen.", time: "30" }
+        ]
+      }
+    };
+
+    function selectDay(dayKey) {
+      // Update active day button
+      const dayCards = document.querySelectorAll('.day-card');
+      dayCards.forEach(card => card.classList.remove('active'));
+      document.getElementById('day-' + dayKey).classList.add('active');
+      
+      const data = dayData[dayKey];
+      document.getElementById('routine-day-name').textContent = data.title;
+      
+      const exercisesList = document.getElementById('routine-exercises');
+      exercisesList.innerHTML = '';
+      
+      data.exercises.forEach(ex => {
+        // Find matching illustration image
+        let imgSrc = "product-cover.png";
+        const nameLower = ex.name.toLowerCase();
+        if (nameLower.indexOf("torção") !== -1 || nameLower.indexOf("lombar") !== -1 || nameLower.indexOf("gato-vaca") !== -1 || nameLower.indexOf("criança") !== -1 || nameLower.indexOf("torácica") !== -1 || nameLower.indexOf("cobra") !== -1) {
+          imgSrc = "exercise_lombar.png";
+        } else if (nameLower.indexOf("pescoço") !== -1 || nameLower.indexOf("cervical") !== -1 || nameLower.indexOf("nuca") !== -1 || nameLower.indexOf("ombro") !== -1 || nameLower.indexOf("peito") !== -1 || nameLower.indexOf("peitoral") !== -1) {
+          imgSrc = "exercise_cervical.png";
+        } else if (nameLower.indexOf("ponte") !== -1 || nameLower.indexOf("pélvica") !== -1 || nameLower.indexOf("joelho") !== -1 || nameLower.indexOf("articulação") !== -1 || nameLower.indexOf("quadril") !== -1 || nameLower.indexOf("wall sit") !== -1 || nameLower.indexOf("isometria") !== -1 || nameLower.indexOf("flexor") !== -1) {
+          imgSrc = "exercise_articulacao.png";
+        }
+
+        const step = document.createElement('div');
+        step.className = 'exercise-step';
+        step.innerHTML = `
+          <div class="exercise-num">${ex.num}</div>
+          <div class="exercise-img-wrapper" style="width: 100px; height: 70px; border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <img src="${imgSrc}" alt="${ex.name}" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <div class="exercise-info">
+            <h4>${ex.name}</h4>
+            <p>${ex.desc}</p>
+          </div>
+          <button onclick="previewExercise('${ex.name}', '${ex.time}')" class="btn-secondary" style="font-size: 0.85rem; padding: 8px 16px; width: 100%;">Ver Demonstração</button>
+        `;
+        exercisesList.appendChild(step);
+      });
+    }
+
+    // Video modal demo simulator (reused)
+    let videoTimerInterval = null;
+
+    function previewExercise(exerciseName, duration) {
+      const modal = document.getElementById('video-modal');
+      modal.classList.add('active');
+      
+      document.getElementById('modal-video-title').textContent = "Visualização de Postura";
+      document.getElementById('modal-video-exercise-name').textContent = exerciseName;
+      
+      // Determine the illustration image based on exercise name
+      const imgElement = document.getElementById('modal-video-img');
+      const nameLower = exerciseName.toLowerCase();
+      if (nameLower.indexOf("torção") !== -1 || nameLower.indexOf("lombar") !== -1) {
+        imgElement.src = "exercise_lombar.png";
+      } else if (nameLower.indexOf("pescoço") !== -1 || nameLower.indexOf("cervical") !== -1 || nameLower.indexOf("alongamento lateral") !== -1 || nameLower.indexOf("nuca") !== -1) {
+        imgElement.src = "exercise_cervical.png";
+      } else if (nameLower.indexOf("ponte") !== -1 || nameLower.indexOf("pélvica") !== -1 || nameLower.indexOf("articulação") !== -1 || nameLower.indexOf("quadril") !== -1) {
+        imgElement.src = "exercise_articulacao.png";
+      } else {
+        imgElement.src = "product-cover.png";
+      }
+      
+      const timerElement = document.getElementById('timer');
+      const progressElement = document.getElementById('video-progress');
+      
+      let durationNum = parseInt(duration);
+      timerElement.textContent = durationNum;
+      progressElement.style.width = "0%";
+      
+      if (videoTimerInterval) clearInterval(videoTimerInterval);
+      
+      videoTimerInterval = setInterval(() => {
+        durationNum--;
+        timerElement.textContent = durationNum;
+        
+        let percent = ((parseInt(duration) - durationNum) / parseInt(duration)) * 100;
+        progressElement.style.width = percent + "%";
+        
+        if (durationNum <= 0) {
+          clearInterval(videoTimerInterval);
+          closeVideoModal();
+        }
+      }, 1000);
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('video-modal');
+      modal.classList.remove('active');
+      if (videoTimerInterval) {
+        clearInterval(videoTimerInterval);
+        videoTimerInterval = null;
+      }
+    }
+
+    // Interactive Habits Checklist
+    function toggleHabit(element) {
+      element.classList.toggle('checked');
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const totalItems = document.querySelectorAll('.checklist-item').length;
+      const checkedItems = document.querySelectorAll('.checklist-item.checked').length;
+      
+      const percentage = totalItems > 0 ? Math.round((checkedItems / totalItems) * 100) : 0;
+      
+      document.getElementById('progress-percentage').textContent = percentage + "% concluído";
+      document.getElementById('progress-fill').style.width = percentage + "%";
+    }
+  </script>
+</body>
+</html>

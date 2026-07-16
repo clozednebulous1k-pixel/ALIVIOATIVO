@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alívio Imediato - Adeus Dores Físicas em 10 Minutos por Dia</title>
+  <meta name="description" content="Descubra o método simples de exercícios em casa para aliviar dores nas costas, pescoço e articulações de forma rápida e segura. Pagamento único com acesso vitalício.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="currentColor"/>
+        </svg>
+        Alívio<span>Ativo</span>
+      </div>
+      <a href="#garantia" class="nav-link">Garantia de 7 Dias</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="badge-cta">Oferta de Lançamento - Pagamento Único</span>
+        <h1>Alivie suas dores físicas em até <span class="highlight-accent">10 minutos por dia</span>, sem remédios ou consultas caras</h1>
+        <p class="hero-subheadline">Um método passo a passo de exercícios práticos, seguros e comprovados para fazer em casa e recuperar a sua liberdade de movimento.</p>
+        
+        <div class="cta-group">
+          <button onclick="openCheckout()" class="btn-primary">Quero Aliviar Minha Dor Hoje</button>
+          <div class="cta-subtext">
+            <svg width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/>
+            </svg>
+            <span>Acesso imediato • Pagamento Único • Sem mensalidades</span>
+          </div>
+        </div>
+
+        <div class="hero-trust-badges">
+          <div class="trust-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 8H17V6C17 3.24 14.76 1 12 1C9.24 1 7 3.24 7 6V8H6C4.9 8 4 8.9 4 10V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V10C20 8.9 19.1 8 18 8ZM12 17C10.9 17 10 16.1 10 15C10 13.9 10.9 13 12 13C13.1 13 14 13.9 14 15C14 16.1 13.1 17 12 17ZM15 8H9V6C9 4.34 10.34 3 12 3C13.66 3 15 4.34 15 6V8Z"/>
+            </svg>
+            Compra 100% Segura
+          </div>
+          <div class="trust-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"/>
+            </svg>
+            Menos de 15 min/dia
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <!-- 3D style mockup container -->
+        <div class="mockup-container">
+          <div class="mockup-header">
+            <div class="mockup-logo">MÉTODO ALÍVIO</div>
+            <div class="mockup-badge">DIGITAL</div>
+          </div>
+          <div class="mockup-body" style="flex: 1; display: flex; align-items: center; justify-content: center; margin: 20px 0;">
+            <img src="product-cover.png" alt="Capa do Método Alívio Ativo" style="width: 100%; max-height: 240px; object-fit: cover; border-radius: var(--border-radius-sm); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 25px rgba(0,0,0,0.4);">
+          </div>
+          <div class="mockup-footer">
+            <div class="mockup-footer-item">
+              <span>★ Vitalício</span>
+            </div>
+            <div class="mockup-footer-item">
+              <span>★ Celular & PC</span>
+            </div>
+          </div>
+          
+          <!-- Floating Badge -->
+          <div class="mockup-floating-badge">
+            <div class="floating-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+            <div class="floating-text">
+              <span class="label">Resultados em</span>
+              <span class="value">7 Dias</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PAIN SELECTOR SECTION -->
+  <section class="pain-selector-section">
+    <div class="container">
+      <div class="section-intro">
+        <span class="badge-green">Identifique sua dor</span>
+        <h2>Onde você sente mais dor no dia a dia?</h2>
+        <p>Selecione a região no mapa corporal abaixo e veja como o nosso método vai te ajudar a eliminar o desconforto de forma específica e segura.</p>
+      </div>
+
+      <div class="pain-selector-widget">
+        <!-- Interactive Body map (styled back-view outline in SVG) -->
+        <div class="pain-map-visual">
+          <div class="pain-map-wrapper">
+            <svg class="human-body-svg" viewBox="0 0 100 240" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+              <!-- Head -->
+              <circle cx="50" cy="20" r="12" />
+              <!-- Neck -->
+              <path d="M46 32h8v15h-8z" />
+              <!-- Shoulders & Arms -->
+              <path d="M25 47h50c0 0 12 12 10 55s-5 60-5 60h-7s4-40 2-55c-2-15-5-20-5-20l-5 70-4 75H51v-80H49v80h-15l-4-75-5-70c0 0-3 5-5 20s2 55 2 55h-7s-3-17-5-60 10-55 10-55z" />
+              <!-- Back & Torso -->
+              <path d="M38 47h24v75H38z" />
+            </svg>
+            
+            <!-- Hotspots overlay -->
+            <div class="pain-hotspot hotspot-neck active" onclick="selectPain('neck')" data-pain="neck" title="Dor no Pescoço"></div>
+            <div class="pain-hotspot hotspot-back" onclick="selectPain('back')" data-pain="back" title="Dor no Meio das Costas"></div>
+            <div class="pain-hotspot hotspot-lowerback" onclick="selectPain('lowerback')" data-pain="lowerback" title="Dor Lombar"></div>
+            <div class="pain-hotspot hotspot-knee" onclick="selectPain('knee')" data-pain="knee" title="Dor nas Articulações / Joelho"></div>
+          </div>
+        </div>
+
+        <div class="pain-tabs-and-details">
+          <div class="pain-tabs" style="margin-bottom: 20px;">
+            <button class="pain-tab-btn active" id="tab-neck" onclick="selectPain('neck')">
+              <span>Dor no Pescoço e Ombros</span>
+              <div class="pain-tab-icon">➔</div>
+            </button>
+            <button class="pain-tab-btn" id="tab-back" onclick="selectPain('back')">
+              <span>Dor nas Costas e Torácica</span>
+              <div class="pain-tab-icon">➔</div>
+            </button>
+            <button class="pain-tab-btn" id="tab-lowerback" onclick="selectPain('lowerback')">
+              <span>Dor Lombar (Costas Baixas)</span>
+              <div class="pain-tab-icon">➔</div>
+            </button>
+            <button class="pain-tab-btn" id="tab-knee" onclick="selectPain('knee')">
+              <span>Dor nos Joelhos e Articulações</span>
+              <div class="pain-tab-icon">➔</div>
+            </button>
+          </div>
+
+          <div class="pain-details-card">
+            <!-- Neck pain detail -->
+            <div class="pain-detail-content active" id="detail-neck">
+              <div class="pain-detail-header">
+                <h3>Pescoço e Ombros Travados?</h3>
+              </div>
+              <p>Muitas horas no celular, computador ou estresse diário causam tensão severa no trapézio e nas vértebras cervicais. Isso gera dores de cabeça tensionais e rigidez extrema ao acordar.</p>
+              <div class="pain-action-box">
+                <div class="pain-action-title">Como resolver no Guia:</div>
+                <p class="pain-action-desc">Exercícios de mobilidade cervical e liberação miofascial suave para destravar os ombros e restaurar a circulação em menos de 5 minutos.</p>
+              </div>
+            </div>
+
+            <!-- Back pain detail -->
+            <div class="pain-detail-content" id="detail-back">
+              <div class="pain-detail-header">
+                <h3>Dor no Meio das Costas (Escápulas)</h3>
+              </div>
+              <p>A postura curvada no dia a dia sobrecarrega a coluna torácica. A sensação de "peso" nas costas e pontadas constantes impedem que você relaxe ou trabalhe com conforto.</p>
+              <div class="pain-action-box">
+                <div class="pain-action-title">Como resolver no Guia:</div>
+                <p class="pain-action-desc">Movimentos de abertura peitoral e fortalecimento escapular simples que você pode fazer usando apenas o encosto de uma cadeira.</p>
+              </div>
+            </div>
+
+            <!-- Lower back detail -->
+            <div class="pain-detail-content" id="detail-lowerback">
+              <div class="pain-detail-header">
+                <h3>Dor Lombar Constante</h3>
+              </div>
+              <p>A dor lombar é a principal causa de limitação física. Ficar em pé ou sentado por muito tempo vira um martírio, e tarefas simples como amarrar o sapato tornam-se dolorosas.</p>
+              <div class="pain-action-box">
+                <div class="pain-action-title">Como resolver no Guia:</div>
+                <p class="pain-action-desc">Descompressão da coluna lombar através de posições de relaxamento ativo e ativação do core, aliviando a pressão sobre os discos vertebrais imediatamente.</p>
+              </div>
+            </div>
+
+            <!-- Knee detail -->
+            <div class="pain-detail-content" id="detail-knee">
+              <div class="pain-detail-header">
+                <h3>Joelhos e Articulações Fracas</h3>
+              </div>
+              <p>O impacto ao caminhar, subir escadas ou o simples ato de agachar provocam estalos e dor nas articulações, causados por fraqueza muscular ao redor da patela e quadris travados.</p>
+              <div class="pain-action-box">
+                <div class="pain-action-title">Como resolver no Guia:</div>
+                <p class="pain-action-desc">Exercícios de baixo impacto para fortalecimento do quadríceps e aumento da flexibilidade do quadril, protegendo o joelho de desgastes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APRESENTAÇÃO DO PROBLEMA -->
+  <section class="problem-section">
+    <div class="container problem-grid">
+      <div class="problem-intro">
+        <span class="badge-cta" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border-color: rgba(239, 68, 68, 0.2);">A Dura Realidade</span>
+        <h2 style="text-align: left; margin-top: 10px;">Até quando você vai deixar a dor controlar a sua rotina?</h2>
+        <p style="margin-bottom: 24px;">Viver com dor não é apenas um incômodo físico — é um peso emocional que afasta você das coisas que ama. A dependência de analgésicos e a frustração de tratamentos caros que não resolvem na raiz são problemas comuns que você não precisa mais aceitar.</p>
+        <p>Nossa abordagem foca no <strong>movimento inteligente</strong>: exercícios curtos que agem na raiz do problema, devolvendo a lubrificação natural das articulações e alinhando a coluna.</p>
+      </div>
+
+      <div class="problem-list">
+        <div class="problem-item">
+          <div class="problem-icon">✕</div>
+          <div class="problem-text">
+            <h4>Dependência de Analgésicos</h4>
+            <p>Remédios apenas mascaram a dor temporariamente enquanto atacam o seu estômago e fígado. A dor sempre volta.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">✕</div>
+          <div class="problem-text">
+            <h4>Tratamentos e Consultas Caríssimas</h4>
+            <p>Sessões intermináveis de fisioterapia tradicional custam fortunas por mês e exigem tempo que você não tem disponível.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">✕</div>
+          <div class="problem-text">
+            <h4>Medo de Se Mover e Piorar</h4>
+            <p>A falta de orientação correta faz você evitar movimentos naturais por medo de travar a coluna ou lesionar uma articulação.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SOLUTION SECTION -->
+  <section class="solution-section">
+    <div class="container solution-grid">
+      <div class="video-mockup-wrapper" onclick="playSimulator()">
+        <div class="video-placeholder" id="video-content-box">
+          <div class="video-play-btn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <span class="video-tagline">Clique para Ver o Simulador do Método</span>
+        </div>
+      </div>
+
+      <div class="solution-content">
+        <span class="badge-green" style="background: rgba(20, 184, 166, 0.1); color: var(--color-primary-light); border-color: rgba(20, 184, 166, 0.2);">A Solução Definitiva</span>
+        <h2 class="light" style="text-align: left; margin-top: 10px;">Um Método Baseado em Movimentos Seguros</h2>
+        <p class="light" style="margin-bottom: 30px;">Diferente de rotinas exaustivas de academia, nosso guia oferece sequências curtas desenvolvidas especificamente para aliviar a tensão articular e reequilibrar o corpo.</p>
+
+        <div class="solution-steps">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <div class="step-info">
+              <h4>Passo a Passo Visual</h4>
+              <p>Fotos e descrições claras de cada exercício para garantir que você faça a postura correta sem risco de lesões.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <div class="step-info">
+              <h4>Apenas 10 a 15 Minutos</h4>
+              <p>Rotinas rápidas que encaixam na manhã mais corrida ou logo antes de dormir para relaxar o corpo e ter um sono profundo.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <div class="step-info">
+              <h4>Zero Equipamentos</h4>
+              <p>Use apenas o próprio peso do corpo, uma parede ou uma cadeira comum. Não precisa comprar nada extra.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED SECTION -->
+  <section class="included-section">
+    <div class="container">
+      <div class="section-intro">
+        <span class="badge-green">O Conteúdo</span>
+        <h2>O que você recebe imediatamente ao garantir seu acesso:</h2>
+        <p>Todo o material foi desenhado para ser prático, direto ao ponto e de fácil visualização no seu celular, tablet ou computador.</p>
+      </div>
+
+      <div class="included-grid">
+        <div class="included-card">
+          <div class="included-icon-container">📅</div>
+          <h3>Cronograma de Exercícios Diários</h3>
+          <p>Um roteiro exato contendo o que fazer segunda a domingo para dores específicas. Saiba exatamente qual rotina seguir sem perder tempo decidindo.</p>
+        </div>
+
+        <div class="included-card">
+          <div class="included-icon-container">🎬</div>
+          <h3>Demonstrações de Postura Correta</h3>
+          <p>Imagens ilustradas detalhadas e links para vídeos demonstrativos rápidos focando no alinhamento articular ideal para garantir máxima segurança.</p>
+        </div>
+
+        <div class="included-card">
+          <div class="included-icon-container">💡</div>
+          <h3>Guia de Hábitos Anti-Dor</h3>
+          <p>Pequenos ajustes de postura no trabalho, na forma de dormir e ao levantar objetos que previnem que as dores voltem a aparecer no futuro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-intro">
+        <span class="badge-cta">Resultados Reais</span>
+        <h2>Quem já testou, sentiu o alívio</h2>
+        <p>Veja relatos de pessoas comuns que recuperaram a mobilidade e voltaram a viver sem dores.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div>
+            <div class="rating-stars">★★★★★</div>
+            <p class="testimonial-quote">"Trabalho 8 horas sentada e minha lombar vivia travada. Tomava anti-inflamatório quase toda semana. Com apenas 10 minutos de alongamento de descompressão logo cedo, minha vida mudou. Não sinto dores há semanas!"</p>
+          </div>
+          <div class="testimonial-user">
+            <div class="user-avatar">MS</div>
+            <div class="user-info">
+              <h4>Maria Silva</h4>
+              <p>42 anos • Advogada</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="rating-stars">★★★★★</div>
+            <p class="testimonial-quote">"Achei que por ter 65 anos minha dor nos joelhos e quadril era desgaste normal. O método me ensinou a fortalecer as pernas de forma suave. Consigo caminhar no parque e brincar com meus netos sem mancar."</p>
+          </div>
+          <div class="testimonial-user">
+            <div class="user-avatar">JS</div>
+            <div class="user-info">
+              <h4>João Santos</h4>
+              <p>65 anos • Aposentado</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="rating-stars">★★★★★</div>
+            <p class="testimonial-quote">"Sentia pontadas horríveis no pescoço e ombros por causa da tensão. Os vídeos demonstrativos ajudam muito a acertar a postura. Sinto os ombros leves, a postura alinhou e até meu sono melhorou muito."</p>
+          </div>
+          <div class="testimonial-user">
+            <div class="user-avatar">AO</div>
+            <div class="user-info">
+              <h4>Ana Oliveira</h4>
+              <p>31 anos • Designer Gráfica</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING AND OFFER SECTION -->
+  <section class="pricing-section" id="oferta">
+    <div class="container">
+      <div class="section-intro">
+        <span class="badge-cta" style="background: rgba(249, 115, 22, 0.15); color: var(--color-accent); border-color: rgba(249, 115, 22, 0.3);">Oferta Especial Limitada</span>
+        <h2 class="light">Recupere a sua qualidade de vida hoje</h2>
+        <p class="light">Invista uma única vez na sua saúde e livre-se do ciclo de dor e medicamentos.</p>
+      </div>
+
+      <div class="pricing-wrapper">
+        <div class="pricing-badge">PROMOÇÃO ATIVA</div>
+        <div class="pricing-box">
+          <div class="price-strike">De R$ 197,00</div>
+          <div class="price-main">R$ 47<span>,90</span></div>
+          <div class="payment-frequency">PAGAMENTO ÚNICO • ACESSO VITALÍCIO</div>
+          
+          <div class="pricing-features">
+            <div class="pricing-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#059669"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Guia Prático Completo Alívio Rápido</span>
+            </div>
+            <div class="pricing-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#059669"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Demonstrações em Vídeos das Posturas</span>
+            </div>
+            <div class="pricing-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#059669"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Cronogramas de Exercícios Semanais</span>
+            </div>
+            <div class="pricing-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#059669"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Bônus: Checklists de Hábitos Posturais</span>
+            </div>
+          </div>
+
+          <button onclick="openCheckout()" class="btn-primary pricing-cta">Quero Aliviar Minha Dor Hoje</button>
+          
+          <p style="font-size: 0.8rem; color: #64748b; margin-top: 15px;">🔒 Transação 100% criptografada e segura via certificado SSL.</p>
+        </div>
+      </div>
+
+      <!-- Garantia -->
+      <div class="guarantee-box" id="garantia">
+        <div class="guarantee-icon">7</div>
+        <div class="guarantee-text">
+          <h4>Garantia Blindada de 7 Dias</h4>
+          <p>Você tem 7 dias inteiros para testar as rotinas práticas de exercícios. Se por qualquer motivo não sentir nenhuma melhora nas suas dores ou achar que o método não é para você, basta nos enviar um e-mail. Nós devolveremos 100% do seu dinheiro de volta, sem burocracia ou questionamentos. O seu risco é zero.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-intro">
+        <span class="badge-green">Tire suas dúvidas</span>
+        <h2>Perguntas Frequentes</h2>
+        <p>Ainda tem alguma dúvida sobre o funcionamento do Guia Alívio Ativo? Veja as respostas rápidas abaixo.</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Idosos ou grávidas podem realizar estes exercícios?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Sim! Os exercícios são focados em mobilidade de baixo impacto e alongamentos de descompressão articular muito suaves. No entanto, recomendamos sempre consultar o seu médico ou obstetra antes de iniciar qualquer rotina física se você possuir alguma condição crônica pré-existente ou estiver grávida.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Como vou receber o meu acesso?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              O envio é imediato! Assim que o seu pagamento for aprovado (Pix cai na hora, cartão de crédito leva até 2 minutos), você receberá um e-mail com os seus dados de login exclusivos e o link de download direto do guia em PDF de alta resolução, além da área de vídeos.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>O pagamento é único ou é uma assinatura?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              O pagamento é único! Você paga somente o valor promocional de R$ 47,90 uma vez e terá acesso completo e vitalício a todo o conteúdo e suas atualizações futuras, sem nenhuma cobrança recorrente, mensalidade ou taxas extras.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Preciso comprar algum acessório para fazer as posturas?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Não. Todos os movimentos foram criados de forma inteligente para que você precise apenas de um espaço livre no chão (pode usar um tapete simples ou colchonete), uma parede limpa e uma cadeira firme comum da sua casa.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Como funciona a garantia de 7 dias?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Nossa garantia é incondicional. Você pode acessar o guia, ver os vídeos e praticar os exercícios. Se durante a primeira semana você decidir que o conteúdo não te ajudou, basta enviar uma mensagem no e-mail de suporte (contato@alivioativo.com) solicitando o reembolso. Devolveremos todo o valor pago de forma integral.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="currentColor"/>
+            </svg>
+            Alívio<span>Ativo</span>
+          </div>
+          <p>O Guia Alívio Ativo não substitui o diagnóstico médico profissional ou tratamento de saúde especializado. Consulte sempre seu médico para condições físicas persistentes.</p>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="#oferta" class="footer-link">Garantir Acesso</a></li>
+            <li><a href="#garantia" class="footer-link">Política de Garantia</a></li>
+            <li><a href="#faq" class="footer-link">Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Suporte</h4>
+          <ul class="footer-links-list">
+            <li><span class="footer-link">E-mail: suporte@alivioativo.com</span></li>
+            <li><span class="footer-link">Horário: Seg a Sex - 9h às 18h</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Alívio Ativo. Todos os direitos reservados.</p>
+        <p>Desenvolvido com foco em bem-estar e mobilidade saudável.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SIMULATED CHECKOUT MODAL -->
+  <div class="checkout-modal" id="checkout-modal">
+    <div class="checkout-card">
+      <button class="checkout-close" onclick="closeCheckout()">&times;</button>
+      
+      <!-- Checkout Form State -->
+      <div id="checkout-form-state">
+        <div class="checkout-header">
+          <h3>Inscrição Segura</h3>
+          <p>Insira seus dados para receber o acesso imediatamente</p>
+        </div>
+        <form class="checkout-form" onsubmit="submitCheckout(event)">
+          <div class="form-group">
+            <label for="name">Nome Completo</label>
+            <input type="text" id="name" required placeholder="Digite seu nome completo">
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail para Receber o Acesso</label>
+            <input type="email" id="email" required placeholder="Ex: seu-email@email.com">
+          </div>
+          <div class="form-group">
+            <label>Forma de Pagamento</label>
+            <div style="display: flex; gap: 12px; margin-top: 4px;">
+              <label style="flex: 1; border: 1px solid var(--color-primary-light); border-radius: var(--border-radius-sm); padding: 12px; display: flex; align-items: center; gap: 8px; cursor: pointer; background: var(--color-primary-glow);" id="payment-pix-label">
+                <input type="radio" name="payment" value="pix" checked onchange="togglePaymentMethod('pix')" style="accent-color: var(--color-primary-light);">
+                <div>
+                  <div style="font-weight: 700; font-size: 0.9rem;">Pix</div>
+                  <div style="font-size: 0.75rem; color: var(--color-text-muted);">Liberação imediata</div>
+                </div>
+              </label>
+              <label style="flex: 1; border: 1px solid #cbd5e1; border-radius: var(--border-radius-sm); padding: 12px; display: flex; align-items: center; gap: 8px; cursor: pointer;" id="payment-card-label">
+                <input type="radio" name="payment" value="card" onchange="togglePaymentMethod('card')" style="accent-color: var(--color-primary-light);">
+                <div>
+                  <div style="font-weight: 700; font-size: 0.9rem;">Cartão</div>
+                  <div style="font-size: 0.75rem; color: var(--color-text-muted);">Até 12x de R$ 4,80</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Card Fields (Hidden by default) -->
+          <div id="card-fields-container" style="display: none; flex-direction: column; gap: 12px; border-top: 1px dashed #e2e8f0; padding-top: 15px; margin-top: 5px;">
+            <div class="form-group">
+              <label for="card-number">Número do Cartão</label>
+              <input type="text" id="card-number" placeholder="0000 0000 0000 0000" maxlength="19" oninput="formatCardNumber(this)">
+            </div>
+            <div class="form-group">
+              <label for="card-holder">Nome Impresso no Cartão</label>
+              <input type="text" id="card-holder" placeholder="Ex: ALISIO M SILVA">
+            </div>
+            <div style="display: flex; gap: 12px;">
+              <div class="form-group" style="flex: 1;">
+                <label for="card-expiry">Validade</label>
+                <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5" oninput="formatCardExpiry(this)">
+              </div>
+              <div class="form-group" style="flex: 1;">
+                <label for="card-cvv">CVV</label>
+                <input type="text" id="card-cvv" placeholder="123" maxlength="4" oninput="formatCardCvv(this)">
+              </div>
+            </div>
+          </div>
+
+          <div class="checkout-summary">
+            <div class="checkout-summary-row">
+              <span>Método Alívio Ativo (Vitalício)</span>
+              <span>R$ 47,90</span>
+            </div>
+            <div class="checkout-summary-row">
+              <span>Taxas de Inscrição</span>
+              <span>Grátis</span>
+            </div>
+            <div class="checkout-summary-row">
+              <span>Total a pagar</span>
+              <span>R$ 47,90</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; border: none; margin-top: 10px;">Finalizar e Receber Acesso</button>
+          <p style="font-size: 0.75rem; text-align: center; color: var(--color-text-muted); margin-top: 10px;">🔒 Conexão segura protegida por criptografia de 256 bits.</p>
+        </form>
+      </div>
+
+      <!-- Checkout Pix State -->
+      <div id="checkout-pix-state" style="display: none; text-align: center;">
+        <div class="checkout-header">
+          <h3>Inscrição via Pix</h3>
+          <p>Copie o código ou escaneie o QR Code para pagar</p>
+        </div>
+        <div style="margin: 20px auto; width: 160px; height: 160px; background: #fff; border: 1px solid #e2e8f0; border-radius: var(--border-radius-md); padding: 10px; display: flex; align-items: center; justify-content: center;">
+          <!-- Simulated QR Code in SVG -->
+          <svg width="140" height="140" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="30" height="30" fill="#0f766e" />
+            <rect x="5" y="5" width="20" height="20" fill="#fff" />
+            <rect x="10" y="10" width="10" height="10" fill="#0f766e" />
+            <rect x="70" y="0" width="30" height="30" fill="#0f766e" />
+            <rect x="75" y="5" width="20" height="20" fill="#fff" />
+            <rect x="80" y="10" width="10" height="10" fill="#0f766e" />
+            <rect x="0" y="70" width="30" height="30" fill="#0f766e" />
+            <rect x="5" y="75" width="20" height="20" fill="#fff" />
+            <rect x="10" y="80" width="10" height="10" fill="#0f766e" />
+            <rect x="40" y="10" width="10" height="10" fill="#0f766e" />
+            <rect x="50" y="20" width="10" height="15" fill="#0f766e" />
+            <rect x="35" y="45" width="15" height="10" fill="#0f766e" />
+            <rect x="60" y="35" width="10" height="20" fill="#0f766e" />
+            <rect x="70" y="60" width="20" height="10" fill="#0f766e" />
+            <rect x="80" y="80" width="10" height="10" fill="#0f766e" />
+            <rect x="45" y="75" width="15" height="15" fill="#0f766e" />
+            <rect x="55" y="50" width="10" height="10" fill="#0f766e" />
+            <rect x="30" y="80" width="10" height="15" fill="#0f766e" />
+            <path d="M 0 0 L 100 0 L 100 100 L 0 100 Z" fill="none" stroke="var(--color-primary-light)" stroke-width="4" stroke-dasharray="8 8" />
+          </svg>
+        </div>
+        <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+          <label style="font-size: 0.85rem; font-weight:700;">Pix Copia e Cola:</label>
+          <div style="display: flex; gap: 8px; margin-top: 6px;">
+            <input type="text" id="pix-code-input" readonly value="00020101021226830014br.gov.bcb.pix0136e92f25b2-3c22-4871-b0e2-6bf66c253457520400005303986540547.905802BR5912AlivioAtivo6009SaoPaulo62070503***63040E7D" style="flex: 1; font-size: 0.75rem; background: var(--color-bg-primary); border: 1px solid #cbd5e1; padding: 10px; border-radius: var(--border-radius-sm); outline: none;">
+            <button onclick="copyPixCode()" class="btn-secondary" style="border-radius: var(--border-radius-sm); padding: 8px 16px; font-size: 0.85rem; cursor: pointer; white-space: nowrap;" id="copy-pix-btn">Copiar</button>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 20px; color: var(--color-primary-light); font-weight: 700; font-size: 0.95rem;">
+          <div style="width: 16px; height: 16px; border: 3px solid rgba(20, 184, 166, 0.2); border-top-color: var(--color-primary-light); border-radius: 50%; animation: pulse-slow 1s infinite linear;"></div>
+          <span>Aguardando pagamento...</span>
+        </div>
+        <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 8px;">O sistema irá liberar seu acesso assim que detectar a transação.</p>
+      </div>
+
+      <div id="checkout-success-state" class="checkout-success-state">
+        <div class="success-icon">✓</div>
+        <h3>Pagamento Confirmado!</h3>
+        <p style="margin: 12px 0 24px 0; color: var(--color-text-muted);">Seu acesso ao Guia Alívio Ativo e vídeos explicativos foi gerado com sucesso e enviado para o e-mail: <strong id="buyer-email"></strong>.</p>
+        <a href="area-membros.html" class="btn-secondary" style="width: 100%; text-decoration: none; text-align: center; display: inline-block;">Começar Agora (Acessar de Graça)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO EXERCISE SIMULATOR MODAL -->
+  <div class="checkout-modal" id="video-modal">
+    <div class="checkout-card" style="max-width: 650px; padding: 30px;">
+      <button class="checkout-close" onclick="closeVideoModal()">&times;</button>
+      <div class="checkout-header" style="text-align: left; margin-bottom: 20px;">
+        <span class="badge-green" style="margin-bottom: 8px;">Simulador do Guia Prático</span>
+        <h3 style="font-size: 1.35rem; color: var(--color-text-dark);">Sessão Demonstrativa: Descompressão Lombar Rápida</h3>
+      </div>
+      
+      <!-- Video player preview animation/mockup -->
+      <div style="background: #0f172a; border-radius: var(--border-radius-md); overflow: hidden; aspect-ratio: 16/9; position: relative; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,0.05);">
+        <!-- Exercise Image Illustration Preview -->
+        <img src="exercise_lombar.png" alt="Desenho Torção de Quadril" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: contain; opacity: 0.35; z-index: 0; pointer-events: none;">
+        
+        <!-- Active video frame representation -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; color: #fff; z-index: 1; position: relative;">
+          <div style="border: 2px dashed rgba(20, 184, 166, 0.4); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: pulse-slow 3s infinite ease-in-out; margin-bottom: 12px; background: rgba(15, 23, 42, 0.6);">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="var(--color-primary-light)" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 16H9V8H11V16ZM15 16H13V8H15V16Z"/>
+            </svg>
+          </div>
+          <span style="font-size: 1rem; font-weight: 700; color: #f8fafc; text-shadow: 0 2px 4px rgba(0,0,0,0.8); text-align: center;">Exercício 1: Torção Suave de Quadril (Deitado)</span>
+          <span style="font-size: 0.8rem; color: var(--color-primary-light); margin-top: 4px; font-weight: 700; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Executar por: <span id="timer">45</span>s restantes</span>
+        </div>
+        
+        <!-- Controls bar mockup -->
+        <div style="background: rgba(15, 23, 42, 0.95); padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: #94a3b8;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Simple play icon representing active state -->
+            <span style="color: var(--color-primary-light); font-weight: 700; cursor: pointer;">PAUSADO</span>
+            <span>01:15 / 10:00</span>
+          </div>
+          <!-- Progress bar track -->
+          <div style="flex: 1; margin: 0 20px; height: 6px; background: #334155; border-radius: 3px; position: relative; overflow: hidden;">
+            <div id="video-progress" style="position: absolute; top:0; left:0; height: 100%; width: 12.5%; background: var(--color-primary-light);"></div>
+          </div>
+          <span>Qualidade: 1080p HD</span>
+        </div>
+      </div>
+      
+      <div style="margin-top: 20px;">
+        <h4 style="font-size: 1rem; color: var(--color-text-dark); margin-bottom: 8px;">Como executar corretamente:</h4>
+        <ul style="list-style-type: none; font-size: 0.85rem; color: var(--color-text-muted); display: flex; flex-direction: column; gap: 8px;">
+          <li style="display: flex; gap: 6px;"><span style="color: var(--color-primary-light);">✓</span> Deite-se de costas com os joelhos dobrados e os braços abertos em forma de 'T'.</li>
+          <li style="display: flex; gap: 6px;"><span style="color: var(--color-primary-light);">✓</span> Deixe os joelhos caírem suavemente para o lado direito mantendo os ombros colados no chão.</li>
+          <li style="display: flex; gap: 6px;"><span style="color: var(--color-primary-light);">✓</span> Respire fundo 5 vezes nessa posição, depois repita do lado esquerdo.</li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 24px; text-align: center;">
+        <button onclick="openCheckoutFromVideo()" class="btn-primary" style="width: 100%;">Garantir Guia Completo com Todos os Exercícios</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE LOGIC (JAVASCRIPT) -->
+  <script>
+    // FAQ Accordion Toggle
+    function toggleFaq(button) {
+      const faqItem = button.parentElement;
+      const answer = faqItem.querySelector('.faq-answer');
+      const allFaqItems = document.querySelectorAll('.faq-item');
+      
+      // Close all other FAQ items
+      allFaqItems.forEach(item => {
+        if (item !== faqItem && item.classList.contains('active')) {
+          item.classList.remove('active');
+          item.querySelector('.faq-answer').style.maxHeight = null;
+        }
+      });
+      
+      // Toggle active state of clicked FAQ item
+      faqItem.classList.toggle('active');
+      
+      if (faqItem.classList.contains('active')) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      } else {
+        answer.style.maxHeight = null;
+      }
+    }
+
+    // Pain Selector Tab switching
+    function selectPain(painKey) {
+      // 1. Update tabs
+      const tabs = document.querySelectorAll('.pain-tab-btn');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      const activeTab = document.getElementById('tab-' + painKey);
+      if (activeTab) activeTab.classList.add('active');
+
+      // 2. Update hotspots
+      const hotspots = document.querySelectorAll('.pain-hotspot');
+      hotspots.forEach(spot => spot.classList.remove('active'));
+      const activeSpot = document.querySelector(`.pain-hotspot[data-pain="${painKey}"]`);
+      if (activeSpot) activeSpot.classList.add('active');
+
+      // 3. Update details cards
+      const details = document.querySelectorAll('.pain-detail-content');
+      details.forEach(detail => detail.classList.remove('active'));
+      const activeDetail = document.getElementById('detail-' + painKey);
+      if (activeDetail) activeDetail.classList.add('active');
+    }
+
+    // Redirect directly to the live Hotmart payment page
+    function openCheckout() {
+      window.location.href = "https://pay.hotmart.com/O106761841L";
+    }
+
+    let pixSimulationTimeout = null;
+
+    function togglePaymentMethod(method) {
+      const cardContainer = document.getElementById('card-fields-container');
+      const pixLabel = document.getElementById('payment-pix-label');
+      const cardLabel = document.getElementById('payment-card-label');
+      
+      if (method === 'card') {
+        cardContainer.style.display = 'flex';
+        cardLabel.style.borderColor = 'var(--color-primary-light)';
+        cardLabel.style.background = 'var(--color-primary-glow)';
+        pixLabel.style.borderColor = '#cbd5e1';
+        pixLabel.style.background = 'transparent';
+      } else {
+        cardContainer.style.display = 'none';
+        pixLabel.style.borderColor = 'var(--color-primary-light)';
+        pixLabel.style.background = 'var(--color-primary-glow)';
+        cardLabel.style.borderColor = '#cbd5e1';
+        cardLabel.style.background = 'transparent';
+      }
+    }
+
+    // Card Input Format Helpers
+    function formatCardNumber(input) {
+      let value = input.value.replace(/\D/g, '');
+      let formatted = value.match(/.{1,4}/g);
+      input.value = formatted ? formatted.join(' ') : '';
+    }
+
+    function formatCardExpiry(input) {
+      let value = input.value.replace(/\D/g, '');
+      if (value.length > 2) {
+        input.value = value.substring(0, 2) + '/' + value.substring(2, 4);
+      } else {
+        input.value = value;
+      }
+    }
+
+    function formatCardCvv(input) {
+      input.value = input.value.replace(/\D/g, '');
+    }
+
+    function closeCheckout() {
+      const modal = document.getElementById('checkout-modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto'; // restore body scroll
+      
+      if (pixSimulationTimeout) clearTimeout(pixSimulationTimeout);
+      
+      // Reset forms state after slide animation finishes
+      setTimeout(() => {
+        document.getElementById('checkout-form-state').style.display = 'block';
+        document.getElementById('checkout-pix-state').style.display = 'none';
+        document.getElementById('checkout-success-state').style.display = 'none';
+        document.getElementById('card-fields-container').style.display = 'none';
+        
+        // Reset labels
+        document.getElementById('payment-pix-label').style.borderColor = 'var(--color-primary-light)';
+        document.getElementById('payment-pix-label').style.background = 'var(--color-primary-glow)';
+        document.getElementById('payment-card-label').style.borderColor = '#cbd5e1';
+        document.getElementById('payment-card-label').style.background = 'transparent';
+        
+        document.querySelector('.checkout-form').reset();
+      }, 300);
+    }
+
+    function triggerWebhook(name, email, paymentMethod) {
+      const webhookUrl = 'https://api.utmify.com.br/webhooks/stripe-sale?id=6a581c9cdf3e4b1969530d35';
+      
+      // Perform background POST fetch to UTMify
+      fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          event: 'purchase',
+          name: name,
+          email: email,
+          price: '47.90',
+          currency: 'BRL',
+          payment_method: paymentMethod,
+          status: 'approved'
+        })
+      })
+      .then(() => console.log('UTMify webhook notification sent.'))
+      .catch(err => console.error('UTMify webhook error:', err));
+    }
+
+    function submitCheckout(event) {
+      event.preventDefault();
+      
+      const buyerName = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const formState = document.getElementById('checkout-form-state');
+      const pixState = document.getElementById('checkout-pix-state');
+      const successState = document.getElementById('checkout-success-state');
+      const submitBtn = event.target.querySelector('button[type="submit"]');
+      const paymentMethod = event.target.querySelector('input[name="payment"]:checked').value;
+      
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Processando...";
+      
+      if (paymentMethod === 'pix') {
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Finalizar e Receber Acesso";
+          formState.style.display = 'none';
+          pixState.style.display = 'block';
+          
+          // Simulate bank payment detection in 4 seconds
+          pixSimulationTimeout = setTimeout(() => {
+            pixState.style.display = 'none';
+            document.getElementById('buyer-email').textContent = email;
+            successState.style.display = 'block';
+            
+            // Notify Webhook
+            triggerWebhook(buyerName, email, 'pix');
+          }, 4000);
+        }, 1200);
+      } else {
+        // Stripe integration with fallback simulation
+        fetch('/create-checkout-session', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            email: email,
+            name: buyerName
+          })
+        })
+        .then(res => {
+          if (!res.ok) {
+            return res.json().then(data => { throw new Error(data.error || 'Server error') });
+          }
+          return res.json();
+        })
+        .then(data => {
+          // Redirect user to Stripe Checkout URL
+          window.location.href = data.url;
+        })
+        .catch(err => {
+          console.warn('Stripe checkout failed, falling back to simulation:', err);
+          // Fallback simulation if key is not configured or network offline
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Finalizar e Receber Acesso";
+            formState.style.display = 'none';
+            document.getElementById('buyer-email').textContent = email;
+            successState.style.display = 'block';
+            
+            // Notify Webhook
+            triggerWebhook(buyerName, email, 'credit_card');
+          }, 2000);
+        });
+      }
+    }
+
+    function copyPixCode() {
+      const copyText = document.getElementById('pix-code-input');
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); // for mobile devices
+      navigator.clipboard.writeText(copyText.value);
+      
+      const copyBtn = document.getElementById('copy-pix-btn');
+      copyBtn.textContent = "Copiado! ✓";
+      copyBtn.style.background = "var(--color-secondary)";
+      copyBtn.style.color = "#fff";
+      copyBtn.style.borderColor = "var(--color-secondary)";
+      
+      setTimeout(() => {
+        copyBtn.textContent = "Copiar";
+        copyBtn.style.background = "transparent";
+        copyBtn.style.color = "var(--color-primary-light)";
+        copyBtn.style.borderColor = "var(--color-primary-light)";
+      }, 2000);
+    }
+
+    // Exercise Video Simulator Modal
+    let videoTimerInterval = null;
+
+    function playSimulator() {
+      const modal = document.getElementById('video-modal');
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      // Start timer mockup countdown
+      let timeRemaining = 45;
+      const timerElement = document.getElementById('timer');
+      const progressElement = document.getElementById('video-progress');
+      
+      // Reset video progress mock
+      progressElement.style.width = "12.5%";
+      timerElement.textContent = timeRemaining;
+
+      if (videoTimerInterval) clearInterval(videoTimerInterval);
+
+      videoTimerInterval = setInterval(() => {
+        timeRemaining--;
+        timerElement.textContent = timeRemaining;
+        
+        // Progress increases slightly
+        let currentWidth = 12.5 + ((45 - timeRemaining) / 45) * 10; // increase slightly
+        progressElement.style.width = currentWidth + "%";
+
+        if (timeRemaining <= 0) {
+          timeRemaining = 45; // loop
+        }
+      }, 1000);
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('video-modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      
+      if (videoTimerInterval) {
+        clearInterval(videoTimerInterval);
+        videoTimerInterval = null;
+      }
+    }
+
+    function openCheckoutFromVideo() {
+      closeVideoModal();
+      setTimeout(() => {
+        openCheckout();
+      }, 200);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual Alívio Ativo - Guia de Exercícios Práticos</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 40px 0;
+    }
+    
+    .manual-page {
+      background: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 50px;
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .manual-header {
+      text-align: center;
+      border-bottom: 2px solid var(--color-primary-light);
+      padding-bottom: 30px;
+      margin-bottom: 40px;
+    }
+    
+    .manual-logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--color-text-dark);
+      margin-bottom: 8px;
+    }
+    
+    .manual-logo span {
+      color: var(--color-primary);
+    }
+    
+    .manual-meta {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    
+    .manual-section {
+      margin-bottom: 40px;
+    }
+    
+    .manual-section h2 {
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      text-align: left;
+      border-left: 4px solid var(--color-primary-light);
+      padding-left: 12px;
+      margin-bottom: 20px;
+    }
+    
+    .exercise-card-manual {
+      background: #f1f5f9;
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(0,0,0,0.02);
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    
+    .exercise-card-manual-info {
+      flex: 1;
+    }
+    
+    .exercise-card-manual-img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: var(--border-radius-sm);
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      flex-shrink: 0;
+    }
+    
+    @media (max-width: 600px) {
+      .exercise-card-manual {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .exercise-card-manual-img {
+        width: 100%;
+        height: auto;
+        max-height: 180px;
+      }
+    }
+    
+    .exercise-card-manual h3 {
+      font-size: 1.15rem;
+      color: var(--color-text-dark);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .exercise-card-manual h3 span {
+      background: var(--color-primary);
+      color: #fff;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+    
+    .safety-box {
+      background: rgba(239, 68, 68, 0.05);
+      border-left: 4px solid #ef4444;
+      padding: 20px;
+      border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+      margin-bottom: 40px;
+    }
+    
+    .safety-title {
+      font-weight: 700;
+      color: #ef4444;
+      margin-bottom: 6px;
+    }
+    
+    .print-actions {
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    /* Print Stylesheet Overrides */
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+        color: #000;
+      }
+      .manual-page {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .exercise-card-manual {
+        background: #fff;
+        border: 1px solid #cbd5e1;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="manual-page">
+    
+    <!-- Printable Actions Header -->
+    <div class="no-print" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid #e2e8f0;">
+      <a href="area-membros.html" class="btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">← Voltar ao Painel</a>
+      <button onclick="window.print()" class="btn-primary" style="font-size: 0.85rem; padding: 10px 20px; border: none;">🖨 Imprimir ou Salvar PDF</button>
+    </div>
+
+    <!-- Cover Header -->
+    <div class="manual-header">
+      <div class="manual-logo">Alívio<span>Ativo</span></div>
+      <div class="manual-meta">Guia de Exercícios e Posturas Anti-Dor</div>
+      <p style="font-size: 0.95rem; color: var(--color-text-muted); margin-top: 10px;">Método prático para realizar em casa sem equipamentos</p>
+    </div>
+
+    <!-- Safety Section -->
+    <div class="safety-box">
+      <div class="safety-title">⚠️ Recomendações Importantes de Segurança</div>
+      <p style="font-size: 0.85rem; color: #7f1d1d;">Realize os movimentos de forma lenta e controlada. Mantenha a respiração fluida e relaxada pelo nariz. Se em algum momento sentir dor aguda ou pontada forte, interrompa o exercício imediatamente.</p>
+    </div>
+
+    <!-- Section 1: Lombar -->
+    <section class="manual-section">
+      <h2>Módulo 1: Alívio da Coluna Lombar</h2>
+      <p style="margin-bottom: 20px;">Foco em aliviar a compressão sobre as vértebras inferiores e alongar o quadrado lombar.</p>
+      
+      <div class="exercise-card-manual">
+        <div class="exercise-card-manual-info">
+          <h3><span>1</span> Torção Suave de Quadril</h3>
+          <p><strong>Posição inicial:</strong> Deitado de costas em uma superfície firme, joelhos dobrados e pés planos no chão.</p>
+          <p style="margin-top: 8px;"><strong>Execução:</strong> Abra os braços em formato de "T" nas laterais. Deixe ambos os joelhos caírem lentamente para um dos lados, mantendo os dois ombros firmes no chão. Respire fundo 5 vezes nessa posição. Retorne ao centro e faça para o outro lado.</p>
+          <p style="margin-top: 8px; font-weight: 600; font-size: 0.85rem; color: var(--color-primary);">⏱ Duração sugerida: 2 séries de 45 segundos para cada lado.</p>
+        </div>
+        <img class="exercise-card-manual-img" src="exercise_lombar.png" alt="Desenho Torção Suave de Quadril">
+      </div>
+
+      <div class="exercise-card-manual">
+        <div class="exercise-card-manual-info">
+          <h3><span>2</span> Postura do Gato e Vaca</h3>
+          <p><strong>Posição inicial:</strong> Em quatro apoios (mãos na linha dos ombros e joelhos na linha dos quadris).</p>
+          <p style="margin-top: 8px;"><strong>Execução:</strong> Ao inspirar, empurre o peito para frente e deixe a barriga descer em direção ao chão, olhando sutilmente para cima (Vaca). Ao expirar, curve as costas para cima em direção ao teto, empurrando o chão e trazendo o queixo ao peito (Gato).</p>
+          <p style="margin-top: 8px; font-weight: 600; font-size: 0.85rem; color: var(--color-primary);">⏱ Duração sugerida: 10 repetições completas de respiração.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Cervical -->
+    <section class="manual-section">
+      <h2>Módulo 2: Liberação Cervical e Escapular</h2>
+      <p style="margin-bottom: 20px;">Focado em aliviar as dores acumuladas no pescoço e a rigidez provocada pelo uso prolongado de telas.</p>
+      
+      <div class="exercise-card-manual">
+        <div class="exercise-card-manual-info">
+          <h3><span>1</span> Alongamento Lateral de Pescoço</h3>
+          <p><strong>Posição inicial:</strong> Sentado ou em pé com a postura alinhada.</p>
+          <p style="margin-top: 8px;"><strong>Execução:</strong> Incline a cabeça lateralmente, tentando aproximar a orelha direita do ombro direito. Apoie a mão direita levemente sobre a cabeça para dar um peso suave (sem puxar). Deixe o braço esquerdo relaxado ao lado do corpo.</p>
+          <p style="margin-top: 8px; font-weight: 600; font-size: 0.85rem; color: var(--color-primary);">⏱ Duração sugerida: 30 segundos de cada lado.</p>
+        </div>
+        <img class="exercise-card-manual-img" src="exercise_cervical.png" alt="Desenho Alongamento Lateral de Pescoço">
+      </div>
+
+      <div class="exercise-card-manual">
+        <div class="exercise-card-manual-info">
+          <h3><span>2</span> Extensão Torácica na Cadeira</h3>
+          <p><strong>Posição inicial:</strong> Sentado em uma cadeira com encosto médio ou baixo.</p>
+          <p style="margin-top: 8px;"><strong>Execução:</strong> Coloque as mãos atrás da cabeça com os cotovelos bem abertos. Apoie a parte média das costas no encosto da cadeira e incline suavemente o tronco para trás, olhando para o teto para abrir o peitoral. Mantenha por 3 respirações profundas e retorne.</p>
+          <p style="margin-top: 8px; font-weight: 600; font-size: 0.85rem; color: var(--color-primary);">⏱ Duração sugerida: 5 repetições.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Articulações -->
+    <section class="manual-section">
+      <h2>Módulo 3: Fortalecimento Articular (Joelhos e Quadril)</h2>
+      <p style="margin-bottom: 20px;">Foco em reestabelecer a força de sustentação e estabilidade das pernas, quadril e região pélvica.</p>
+      
+      <div class="exercise-card-manual">
+        <div class="exercise-card-manual-info">
+          <h3><span>1</span> Ponte Pélvica Corporal</h3>
+          <p><strong>Posição inicial:</strong> Deitado de costas com joelhos flexionados, pés apoiados no chão e braços estendidos ao longo do corpo.</p>
+          <p style="margin-top: 8px;"><strong>Execução:</strong> Contraia os glúteos e abdômen e eleve o quadril em direção ao teto, alinhando coxa e tronco. Segure no topo por 2 segundos e retorne lentamente, quase tocando o chão antes de subir novamente.</p>
+          <p style="margin-top: 8px; font-weight: 600; font-size: 0.85rem; color: var(--color-primary);">⏱ Duração sugerida: 3 séries de 12 repetições.</p>
+        </div>
+        <img class="exercise-card-manual-img" src="exercise_articulacao.png" alt="Desenho Ponte Pélvica Corporal">
+      </div>
+    </section>
+
+    <div class="no-print print-actions">
+      <button onclick="window.print()" class="btn-primary" style="border: none;">🖨 Imprimir ou Salvar Manual Agora</button>
+      <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 12px;">Selecione a opção "Salvar como PDF" no destino de sua impressora para guardar o arquivo digital.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
