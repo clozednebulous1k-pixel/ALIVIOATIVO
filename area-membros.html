@@ -318,6 +318,12 @@
         margin-top: 10px;
       }
     }
+    .btn-secondary.active-filter {
+      background: var(--color-primary-light) !important;
+      color: var(--color-bg-dark) !important;
+      border-color: var(--color-primary-light) !important;
+      font-weight: 700;
+    }
   </style>
 </head>
 <body>
@@ -338,6 +344,11 @@
           <li>
             <button class="menu-item-btn active" id="menu-cronograma" onclick="switchSection('cronograma')">
               📅 Cronograma Diário
+            </button>
+          </li>
+          <li>
+            <button class="menu-item-btn" id="menu-biblioteca" onclick="switchSection('biblioteca')">
+              📚 Biblioteca de Exercícios
             </button>
           </li>
           <li>
@@ -439,6 +450,30 @@
               <button onclick="previewExercise('Postura da Criança', '50')" class="btn-secondary" style="font-size: 0.85rem; padding: 8px 16px; width: 100%;">Ver Demonstração</button>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Section: Biblioteca (50 Exercicios) -->
+      <section class="content-section" id="sec-biblioteca">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 25px;">
+          <div>
+            <h2 style="text-align: left; margin-bottom: 8px;">Biblioteca Anti-Dor (50 Exercícios)</h2>
+            <p style="color: #94a3b8;">Guia visual completo de movimentos classificados por grupo muscular para alívio imediato:</p>
+          </div>
+          
+          <!-- Category Filters -->
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button onclick="filterLibrary('todos')" class="btn-secondary active-filter" id="filter-todos" style="font-size: 0.8rem; padding: 8px 16px; cursor: pointer; border-radius: var(--border-radius-sm);">Todos</button>
+            <button onclick="filterLibrary('lombar')" class="btn-secondary" id="filter-lombar" style="font-size: 0.8rem; padding: 8px 16px; cursor: pointer; border-radius: var(--border-radius-sm);">Lombar & Coluna</button>
+            <button onclick="filterLibrary('pescoco')" class="btn-secondary" id="filter-pescoco" style="font-size: 0.8rem; padding: 8px 16px; cursor: pointer; border-radius: var(--border-radius-sm);">Pescoço & Ombros</button>
+            <button onclick="filterLibrary('articulacao')" class="btn-secondary" id="filter-articulacao" style="font-size: 0.8rem; padding: 8px 16px; cursor: pointer; border-radius: var(--border-radius-sm);">Articulações & Joelhos</button>
+            <button onclick="filterLibrary('postura')" class="btn-secondary" id="filter-postura" style="font-size: 0.8rem; padding: 8px 16px; cursor: pointer; border-radius: var(--border-radius-sm);">Postura Geral</button>
+          </div>
+        </div>
+        
+        <!-- Exercises Library Grid -->
+        <div id="library-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+          <!-- Generated dynamically via JS -->
         </div>
       </section>
       
@@ -721,6 +756,140 @@
       document.getElementById('progress-percentage').textContent = percentage + "% concluído";
       document.getElementById('progress-fill').style.width = percentage + "%";
     }
+
+    // 50 Exercises database
+    const libraryData = [
+      // CATEGORY: lombar (15 exercises)
+      { id: 1, name: "Torção Suave de Quadril", desc: "Deitado, pernas flexionadas caem para um lado enquanto os ombros ficam colados no chão.", time: "45", cat: "lombar" },
+      { id: 2, name: "Postura do Gato e Vaca", desc: "Mobilização em quatro apoios arqueando as costas para cima e empurrando a barriga para baixo.", time: "60", cat: "lombar" },
+      { id: 3, name: "Postura da Criança Ativa", desc: "Sente-se nos calcanhares com braços esticados à frente para alongamento e descompressão lombar.", time: "50", cat: "lombar" },
+      { id: 4, name: "Extensão de Cobra Suave", desc: "Deitado de bruços, empurre o peito ligeiramente para cima mantendo o quadril no chão.", time: "40", cat: "lombar" },
+      { id: 5, name: "Super-Homem Isométrico", desc: "Deitado de bruços, eleve pernas e braços levemente para fortalecer a cadeia posterior lombar.", time: "30", cat: "lombar" },
+      { id: 6, name: "Alongamento do Piriforme", desc: "Deitado, puxe uma das pernas cruzadas sobre o joelho oposto em direção ao peito.", time: "45", cat: "lombar" },
+      { id: 7, name: "Abraço de Joelho Duplo", desc: "Deitado de costas, puxe ambos os joelhos contra o peito para alongamento lombar passivo.", time: "60", cat: "lombar" },
+      { id: 8, name: "Báscula Pélvica", desc: "Deitado, faça um leve movimento de quadril colando a coluna lombar inteiramente contra o chão.", time: "45", cat: "lombar" },
+      { id: 9, name: "Rotação Lombar Sentado", desc: "Sentado em uma cadeira, gire o tronco lateralmente segurando no encosto de forma controlada.", time: "50", cat: "lombar" },
+      { id: 10, name: "Perdigueiro Estável (Bird Dog)", desc: "Em quatro apoios, estenda o braço direito e a perna esquerda ao mesmo tempo mantendo alinhamento.", time: "45", cat: "lombar" },
+      { id: 11, name: "Alongamento Quadrado Lombar", desc: "Sentado com uma perna dobrada, estenda o braço por cima da cabeça inclinando o tronco.", time: "40", cat: "lombar" },
+      { id: 12, name: "Inclinação Pélvica Lateral", desc: "Deitado, dobre joelhos e oscile o quadril sutilmente para a esquerda e para a direita.", time: "45", cat: "lombar" },
+      { id: 13, name: "Postura da Esfinge", desc: "Deitado de bruços apoiado nos antebraços, relaxe a lombar e abra o peito olhando à frente.", time: "60", cat: "lombar" },
+      { id: 14, name: "Alongamento Científico do Quadril", desc: "Deitado de costas, cruze uma perna e solte o peso lateralmente abrindo a fáscia lombar.", time: "50", cat: "lombar" },
+      { id: 15, name: "Descompressão Pélvica na Parede", desc: "Deitado de costas com as pernas estendidas e apoiadas verticalmente contra uma parede.", time: "90", cat: "lombar" },
+
+      // CATEGORY: pescoco (15 exercises)
+      { id: 16, name: "Alongamento Lateral de Pescoço", desc: "Incline a cabeça para o lado trazendo a orelha em direção ao ombro com o peso leve da mão.", time: "30", cat: "pescoco" },
+      { id: 17, name: "Liberação Ocipital Manual", desc: "Apoie a base do crânio nas pontas dos dedos e massageie com círculos lentos e leves.", time: "60", cat: "pescoco" },
+      { id: 18, name: "Retração Cervical (Queixo Duplo)", desc: "Puxe a cabeça horizontalmente para trás (sem inclinar) para alinhar a coluna cervical.", time: "45", cat: "pescoco" },
+      { id: 19, name: "Extensão Torácica na Cadeira", desc: "Sentado, apoie a parte média das costas no encosto e abra os cotovelos olhando para o teto.", time: "45", cat: "pescoco" },
+      { id: 20, name: "Alongamento de Trapézio Lateral", desc: "Puxe a cabeça suavemente em ângulo diagonal, direcionando o queixo para a axila.", time: "40", cat: "pescoco" },
+      { id: 21, name: "Abertura de Peitoral na Parede", desc: "Apoie o antebraço em uma parede e gire o corpo ligeiramente para o lado oposto.", time: "45", cat: "pescoco" },
+      { id: 22, name: "Rotações Controladas de Ombros", desc: "Gire os ombros em círculos amplos e relaxados para trás para liberar a fáscia escapular.", time: "60", cat: "pescoco" },
+      { id: 23, name: "Elevação Escapular Consciente", desc: "Suba os ombros em direção às orelhas, mantenha por 3 segundos e solte-os pesadamente.", time: "40", cat: "pescoco" },
+      { id: 24, name: "Alongamento Flexor Cervical", desc: "Entrelace os dedos atrás da cabeça e aplique uma leve pressão para frente encostando o queixo no peito.", time: "35", cat: "pescoco" },
+      { id: 25, name: "Descompressão Cervical com Toalha", desc: "Passe uma toalha na nuca, puxe-a ligeiramente para a frente e estenda a cabeça para trás.", time: "60", cat: "pescoco" },
+      { id: 26, name: "Postura da Linha na Agulha", desc: "Em quatro apoios, passe um braço por baixo do corpo repousando o ombro e ouvido no chão.", time: "45", cat: "pescoco" },
+      { id: 27, name: "Alongamento Torácico Pronado", desc: "Deitado de bruços, estique os braços em 'Y' e eleve ligeiramente o tronco e peito.", time: "40", cat: "pescoco" },
+      { id: 28, name: "Abertura Escapular Cruzada", desc: "Cruze os braços na frente do peito tentando abraçar as próprias costas, abrindo escápulas.", time: "45", cat: "pescoco" },
+      { id: 29, name: "Alongamento de Tríceps e Costas", desc: "Puxe o cotovelo por trás da cabeça, inclinando levemente o tronco para alongar o grande dorsal.", time: "30", cat: "pescoco" },
+      { id: 30, name: "Rotação de Pescoço Lenta", desc: "Gire a cabeça lentamente de um lado para o outro, parando nos limites por 3 segundos.", time: "50", cat: "pescoco" },
+
+      // CATEGORY: articulacao (10 exercises)
+      { id: 31, name: "Ponte Pélvica Isométrica", desc: "Deitado, eleve o quadril mantendo joelhos flexionados e contraia os glúteos.", time: "45", cat: "articulacao" },
+      { id: 32, name: "Isometria de Parede (Wall Sit)", desc: "Encoste na parede e agache até formar 90 graus com as pernas, fortalecendo joelhos.", time: "30", cat: "articulacao" },
+      { id: 33, name: "Alongamento do Flexor do Quadril", desc: "Em posição de ajoelhado em um joelho, empurre o quadril levemente para frente.", time: "40", cat: "articulacao" },
+      { id: 34, name: "Alongamento de Isquiotibiais em Pé", desc: "Estenda uma perna à frente, apoie o calcanhar e incline o tronco mantendo a coluna reta.", time: "35", cat: "articulacao" },
+      { id: 35, name: "Alongamento de Panturrilha na Parede", desc: "Apoie os braços na parede e estenda uma perna para trás mantendo o calcanhar no chão.", time: "45", cat: "articulacao" },
+      { id: 36, name: "Abdução de Quadril Lateral", desc: "Deitado de lado, eleve a perna de cima mantendo o joelho estendido, ativando glúteo médio.", time: "40", cat: "articulacao" },
+      { id: 37, name: "Elevação de Perna Retilínea", desc: "Deitado de costas, eleve uma perna estendida até 45 graus, fortalecendo quadríceps.", time: "45", cat: "articulacao" },
+      { id: 38, name: "Mobilidade de Tornozelo na Parede", desc: "Posicione o pé próximo à parede e empurre o joelho à frente até tocar a parede.", time: "50", cat: "articulacao" },
+      { id: 39, name: "Rotação Interna de Quadril (Pernas de Sapo)", desc: "Deitado de bruços, dobre joelhos em 90 graus e deixe os pés caírem para as laterais.", time: "60", cat: "articulacao" },
+      { id: 40, name: "Flexão de Joelho em Pé", desc: "Fique apoiado em uma perna e dobre o outro joelho trazendo o calcanhar em direção ao glúteo.", time: "40", cat: "articulacao" },
+
+      // CATEGORY: postura (10 exercises)
+      { id: 41, name: "Alongamento de Cadeia Posterior", desc: "Em pé, dobre o tronco para frente soltando o peso da cabeça e braços em direção ao chão.", time: "60", cat: "postura" },
+      { id: 42, name: "Postura do Guerreiro Suave", desc: "Dê um passo largo à frente, flexione o joelho e eleve os braços em direção ao teto.", time: "45", cat: "postura" },
+      { id: 43, name: "Alongamento da Borboleta", desc: "Sentado, junte as solas dos pés, segure as pontas e incline o tronco para a frente.", time: "50", cat: "postura" },
+      { id: 44, name: "Rotação de Tronco Ajoelhado", desc: "Ajoelhado em quatro apoios, coloque uma mão na nuca e aponte o cotovelo para cima e para baixo.", time: "40", cat: "postura" },
+      { id: 45, name: "Alongamento Lateral de Tronco", desc: "Em pé, cruze os pés, eleve um braço e incline lateralmente abrindo toda a fáscia lateral.", time: "30", cat: "postura" },
+      { id: 46, name: "Extensão Geral em Pé", desc: "Em pé, apoie as mãos na lombar alta e empurre o quadril levemente à frente olhando para o teto.", time: "30", cat: "postura" },
+      { id: 47, name: "Descompressão com Rolo Torácico", desc: "Apoie a coluna torácica sobre uma toalha enrolada firme e solte o peso do corpo abrindo o peito.", time: "90", cat: "postura" },
+      { id: 48, name: "Alongamento Flexor de Punho", desc: "Estique o braço à frente e puxe os dedos para trás alongando a fáscia do antebraço.", time: "30", cat: "postura" },
+      { id: 49, name: "Abertura de Ombros Sentado", desc: "Sentado, entrelace os dedos atrás das costas e estique os braços abrindo o peito.", time: "40", cat: "postura" },
+      { id: 50, name: "Postura da Estrela Postural", desc: "Encoste costas, ombros e calcanhares na parede, abra os braços em 'W' e estenda-os para cima.", time: "45", cat: "postura" }
+    ];
+
+    function generateLibrary() {
+      const grid = document.getElementById('library-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      
+      libraryData.forEach(ex => {
+        let imgSrc = "product-cover.png";
+        if (ex.cat === 'lombar' || ex.cat === 'postura') {
+          imgSrc = "exercise_lombar.png";
+        } else if (ex.cat === 'pescoco') {
+          imgSrc = "exercise_cervical.png";
+        } else if (ex.cat === 'articulacao') {
+          imgSrc = "exercise_articulacao.png";
+        }
+        
+        const card = document.createElement('div');
+        card.className = 'day-card lib-item';
+        card.setAttribute('data-category', ex.cat);
+        card.style.background = 'var(--color-bg-dark-accent)';
+        card.style.border = '1px solid rgba(255,255,255,0.03)';
+        card.style.display = 'flex';
+        card.style.flexDirection = 'column';
+        card.style.justifyContent = 'space-between';
+        card.style.padding = '24px';
+        card.style.cursor = 'default';
+        card.style.transform = 'none';
+        
+        card.innerHTML = `
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px;">
+              <span class="badge-green" style="font-size:0.75rem;">Nº ${ex.id}</span>
+              <span style="font-size:0.8rem; color:#64748b;">⏱ ${ex.time}s</span>
+            </div>
+            
+            <div style="background:#fff; height: 130px; border-radius: var(--border-radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.05); overflow:hidden;">
+              <img src="${imgSrc}" alt="${ex.name}" style="width:100%; height:100%; object-fit:contain;">
+            </div>
+            
+            <h4 style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom: 8px;">${ex.name}</h4>
+            <p style="font-size:0.85rem; color:#94a3b8; margin-bottom: 20px; min-height: 50px; line-height: 1.4;">${ex.desc}</p>
+          </div>
+          
+          <button onclick="previewExercise('${ex.name}', '${ex.time}')" class="btn-primary" style="font-size: 0.85rem; padding: 10px 16px; border:none; width: 100%;">Assistir Demonstração</button>
+        `;
+        
+        grid.appendChild(card);
+      });
+    }
+
+    function filterLibrary(category) {
+      const filters = document.querySelectorAll('[id^="filter-"]');
+      filters.forEach(btn => btn.classList.remove('active-filter'));
+      document.getElementById('filter-' + category).classList.add('active-filter');
+      
+      const items = document.querySelectorAll('.lib-item');
+      items.forEach(item => {
+        if (category === 'todos') {
+          item.style.display = 'flex';
+        } else {
+          const itemCat = item.getAttribute('data-category');
+          if (itemCat === category) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      generateLibrary();
+    });
   </script>
 </body>
 </html>
