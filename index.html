@@ -63,8 +63,11 @@
             <div class="mockup-logo">MÉTODO ALÍVIO</div>
             <div class="mockup-badge">DIGITAL</div>
           </div>
-          <div class="mockup-body" style="flex: 1; display: flex; align-items: center; justify-content: center; margin: 20px 0;">
-            <img src="product-cover.png" alt="Capa do Método Alívio Ativo" style="width: 100%; max-height: 240px; object-fit: cover; border-radius: var(--border-radius-sm); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 25px rgba(0,0,0,0.4);">
+          <div class="mockup-body" style="flex: 1; display: flex; align-items: center; justify-content: center; margin: 20px 0; position: relative; height: 260px; overflow: visible;">
+            <!-- Ebook Cover Mockup -->
+            <img src="product-cover.png" alt="Capa do Método Alívio Ativo" style="width: 58%; max-height: 240px; object-fit: cover; border-radius: var(--border-radius-sm); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 25px rgba(0,0,0,0.4); transform: rotate(-6deg) translateX(-15px); z-index: 1; transition: transform 0.3s ease;">
+            <!-- Smartphone App Mockup overlapping -->
+            <img src="phone_mockup.png" alt="Visualização Celular" style="width: 48%; max-height: 230px; object-fit: contain; position: absolute; bottom: -10px; right: -5px; z-index: 2; transform: rotate(5deg); filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5)); transition: transform 0.3s ease;">
           </div>
           <div class="mockup-footer">
             <div class="mockup-footer-item">
@@ -76,7 +79,7 @@
           </div>
           
           <!-- Floating Badge -->
-          <div class="mockup-floating-badge">
+          <div class="mockup-floating-badge" style="z-index: 3;">
             <div class="floating-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -204,7 +207,13 @@
       <div class="problem-intro">
         <span class="badge-cta" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border-color: rgba(239, 68, 68, 0.2);">A Dura Realidade</span>
         <h2 style="text-align: left; margin-top: 10px;">Até quando você vai deixar a dor controlar a sua rotina?</h2>
-        <p style="margin-bottom: 24px;">Viver com dor não é apenas um incômodo físico — é um peso emocional que afasta você das coisas que ama. A dependência de analgésicos e a frustração de tratamentos caros que não resolvem na raiz são problemas comuns que você não precisa mais aceitar.</p>
+        <p style="margin-bottom: 20px;">Viver com dor não é apenas um incômodo físico — é um peso emocional que afasta você das coisas que ama. A dependência de analgésicos e a frustração de tratamentos caros que não resolvem na raiz são problemas comuns que você não precisa mais aceitar.</p>
+        
+        <!-- Spine relief illustration -->
+        <div style="margin: 25px 0; border-radius: var(--border-radius-md); overflow: hidden; border: 1px solid rgba(0,0,0,0.05); box-shadow: var(--shadow-sm); background: #fff; padding: 12px; display: flex; align-items: center; justify-content: center;">
+          <img src="relief_back.png" alt="Pontos de Alívio da Coluna" style="width: 100%; max-height: 250px; object-fit: contain;">
+        </div>
+        
         <p>Nossa abordagem foca no <strong>movimento inteligente</strong>: exercícios curtos que agem na raiz do problema, devolvendo a lubrificação natural das articulações e alinhando a coluna.</p>
       </div>
 
@@ -276,6 +285,43 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE TRANSFORMAÇÃO E ESTILO DE VIDA -->
+  <section class="transformation-section" style="padding: 80px 0; background-color: var(--color-bg-secondary); border-bottom: 1px solid rgba(0,0,0,0.04);">
+    <div class="container transformation-grid">
+      <div>
+        <span class="badge-green" style="background: rgba(5, 150, 105, 0.08); color: var(--color-secondary); border-color: rgba(5, 150, 105, 0.15); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; padding: 6px 12px; border-radius: var(--border-radius-full); border: 1px solid; display: inline-block;">O Resultado Esperado</span>
+        <h2 style="text-align: left; margin-top: 15px; margin-bottom: 20px; font-weight: 800; font-size: clamp(1.8rem, 3.5vw, 2.4rem); color: var(--color-text-dark); line-height: 1.25;">Sinta a leveza de viver em um corpo livre de limitações físicas</h2>
+        <p style="margin-bottom: 25px; font-size: 1.05rem; color: var(--color-text-muted);">Ao praticar os exercícios do método por apenas alguns dias, você começará a notar mudanças fundamentais no seu bem-estar e na sua energia diária:</p>
+        <ul style="list-style-type: none; display: flex; flex-direction: column; gap: 20px; font-size: 1rem; padding: 0;">
+          <li style="display: flex; gap: 12px; align-items: flex-start;">
+            <span style="color: var(--color-secondary); font-weight: bold; font-size: 1.3rem; line-height: 1;">✓</span>
+            <div>
+              <h5 style="font-size: 1.05rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 4px;">Sono Profundo e sem Interrupções</h5>
+              <p style="font-size: 0.95rem; color: var(--color-text-muted);">Durma em posições confortáveis sem acordar no meio da noite por pontadas na lombar ou incômodo no pescoço.</p>
+            </div>
+          </li>
+          <li style="display: flex; gap: 12px; align-items: flex-start;">
+            <span style="color: var(--color-secondary); font-weight: bold; font-size: 1.3rem; line-height: 1;">✓</span>
+            <div>
+              <h5 style="font-size: 1.05rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 4px;">Volte a se Mover sem Medo</h5>
+              <p style="font-size: 0.95rem; color: var(--color-text-muted);">Brinque com seus filhos, faça caminhadas longas ou trabalhe no computador sem aquela fadiga constante no final do dia.</p>
+            </div>
+          </li>
+          <li style="display: flex; gap: 12px; align-items: flex-start;">
+            <span style="color: var(--color-secondary); font-weight: bold; font-size: 1.3rem; line-height: 1;">✓</span>
+            <div>
+              <h5 style="font-size: 1.05rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 4px;">Corpo Solto ao Acordar</h5>
+              <p style="font-size: 0.95rem; color: var(--color-text-muted);">Levante-se da cama com leveza nas articulações, sem passar os primeiros minutos do dia sentindo o corpo rígido ou travado.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div style="border-radius: var(--border-radius-lg); overflow: hidden; border: 1px solid rgba(0,0,0,0.05); box-shadow: var(--shadow-md); background: #fff; padding: 16px; display: flex; align-items: center; justify-content: center;">
+        <img src="wellness_lifestyle.png" alt="Estilo de Vida Saudável e sem Dor" style="width: 100%; height: auto; border-radius: var(--border-radius-md); object-fit: cover;">
       </div>
     </div>
   </section>
