@@ -943,15 +943,6 @@
       grid.innerHTML = '';
       
       libraryData.forEach(ex => {
-        let imgSrc = "product-cover.png";
-        if (ex.cat === 'lombar' || ex.cat === 'postura') {
-          imgSrc = "exercise_lombar.png";
-        } else if (ex.cat === 'pescoco') {
-          imgSrc = "exercise_cervical.png";
-        } else if (ex.cat === 'articulacao') {
-          imgSrc = "exercise_articulacao.png";
-        }
-        
         const card = document.createElement('div');
         card.className = 'day-card lib-item';
         card.setAttribute('data-category', ex.cat);
@@ -971,8 +962,8 @@
               <span style="font-size:0.8rem; color:#64748b;">⏱ ${ex.time}s</span>
             </div>
             
-            <div style="background:#fff; height: 130px; border-radius: var(--border-radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.05); overflow:hidden;">
-              <img src="${imgSrc}" alt="${ex.name}" style="width:100%; height:100%; object-fit:contain;">
+            <div style="background:#0f172a; height: 130px; border-radius: var(--border-radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.05); overflow:hidden; padding: 10px;">
+              ${getExerciseSVG(ex.name, ex.cat)}
             </div>
             
             <h4 style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom: 8px;">${ex.name}</h4>
