@@ -326,63 +326,64 @@
     }
     
     /* SVG Keyframe Animations */
-    @keyframes neck-tilt-anim {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(-22deg); }
-    }
-    @keyframes knees-twist-anim {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(-20deg); }
-    }
-    @keyframes bridge-lift-anim {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-16px); }
-    }
-    @keyframes spine-arch-anim {
-      0%, 100% { d: path("M35 55 Q50 35 65 55"); }
-      50% { d: path("M35 55 Q50 68 65 55"); }
-    }
+    @keyframes neck-tilt-anim { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-22deg); } }
+    @keyframes knees-twist-anim { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-20deg); } }
+    @keyframes bridge-lift-anim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+    @keyframes spine-arch-anim { 0%, 100% { d: path("M35 55 Q50 35 65 55"); } 50% { d: path("M35 55 Q50 68 65 55"); } }
+    @keyframes kneetochest-anim { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(0.7) translateX(-10px); } }
+    @keyframes legraise-anim { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-35deg); } }
+    @keyframes childpose-anim { 0%, 100% { transform: scaleX(1) translateX(0); } 50% { transform: scaleX(0.6) translateX(-20px); } }
+    @keyframes birddogarm-anim { 0%, 100% { transform: rotate(15deg); } 50% { transform: rotate(-5deg); } }
+    @keyframes birddogleg-anim { 0%, 100% { transform: rotate(-15deg); } 50% { transform: rotate(5deg); } }
+    @keyframes cobra-anim { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-15deg); } }
+    @keyframes superman-anim { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-8px) rotate(-5deg); } }
+    @keyframes chairarch-anim { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-18deg); } }
+    @keyframes forwardfold-anim { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(70deg); } }
+    @keyframes wallsit-anim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(12px); } }
+    @keyframes standingstretch-anim { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-12deg); } }
 
-    /* Animation Classes - Paused by default to save CPU & avoid overwhelming movement */
-    .svg-anim-head, .svg-anim-knees, .svg-anim-bridge, .svg-anim-spine {
+    /* Pause all animations by default to save CPU */
+    .svg-anim-head, .svg-anim-knees, .svg-anim-bridge, .svg-anim-spine, 
+    .svg-anim-kneetochest, .svg-anim-legraise, .svg-anim-childpose, 
+    .svg-anim-birddogarm, .svg-anim-birddogleg, .svg-anim-cobra, 
+    .svg-anim-superman, .svg-anim-chairarch, .svg-anim-forwardfold, 
+    .svg-anim-wallsit, .svg-anim-standingstretch {
       animation-play-state: paused;
     }
 
-    /* Animate ONLY when hovering the card */
-    .day-card:hover .svg-anim-head, .exercise-step:hover .svg-anim-head {
-      animation: neck-tilt-anim 3s infinite ease-in-out;
-      animation-play-state: running;
-    }
-    .day-card:hover .svg-anim-knees, .exercise-step:hover .svg-anim-knees {
-      animation: knees-twist-anim 3s infinite ease-in-out;
-      animation-play-state: running;
-    }
-    .day-card:hover .svg-anim-bridge, .exercise-step:hover .svg-anim-bridge {
-      animation: bridge-lift-anim 2.5s infinite ease-in-out;
-      animation-play-state: running;
-    }
-    .day-card:hover .svg-anim-spine, .exercise-step:hover .svg-anim-spine {
-      animation: spine-arch-anim 3s infinite ease-in-out;
-      animation-play-state: running;
-    }
+    /* Hover triggers to start animation play-state */
+    .day-card:hover .svg-anim-head, .exercise-step:hover .svg-anim-head { animation: neck-tilt-anim 3s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-knees, .exercise-step:hover .svg-anim-knees { animation: knees-twist-anim 3s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-bridge, .exercise-step:hover .svg-anim-bridge { animation: bridge-lift-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-spine, .exercise-step:hover .svg-anim-spine { animation: spine-arch-anim 3s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-kneetochest, .exercise-step:hover .svg-anim-kneetochest { animation: kneetochest-anim 3s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-legraise, .exercise-step:hover .svg-anim-legraise { animation: legraise-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-childpose, .exercise-step:hover .svg-anim-childpose { animation: childpose-anim 3s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-birddogarm, .exercise-step:hover .svg-anim-birddogarm { animation: birddogarm-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-birddogleg, .exercise-step:hover .svg-anim-birddogleg { animation: birddogleg-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-cobra, .exercise-step:hover .svg-anim-cobra { animation: cobra-anim 3s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-superman, .exercise-step:hover .svg-anim-superman { animation: superman-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-chairarch, .exercise-step:hover .svg-anim-chairarch { animation: chairarch-anim 3s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-forwardfold, .exercise-step:hover .svg-anim-forwardfold { animation: forwardfold-anim 3s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-wallsit, .exercise-step:hover .svg-anim-wallsit { animation: wallsit-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    .day-card:hover .svg-anim-standingstretch, .exercise-step:hover .svg-anim-standingstretch { animation: standingstretch-anim 3s infinite ease-in-out; animation-play-state: running; }
 
-    /* Always play active animations inside the focused preview modal */
-    #modal-video-anim-container .svg-anim-head {
-      animation: neck-tilt-anim 3s infinite ease-in-out;
-      animation-play-state: running;
-    }
-    #modal-video-anim-container .svg-anim-knees {
-      animation: knees-twist-anim 3s infinite ease-in-out;
-      animation-play-state: running;
-    }
-    #modal-video-anim-container .svg-anim-bridge {
-      animation: bridge-lift-anim 2.5s infinite ease-in-out;
-      animation-play-state: running;
-    }
-    #modal-video-anim-container .svg-anim-spine {
-      animation: spine-arch-anim 3s infinite ease-in-out;
-      animation-play-state: running;
-    }
+    /* Modal Player auto-play rules */
+    #modal-video-anim-container .svg-anim-head { animation: neck-tilt-anim 3s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-knees { animation: knees-twist-anim 3s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-bridge { animation: bridge-lift-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-spine { animation: spine-arch-anim 3s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-kneetochest { animation: kneetochest-anim 3s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-legraise { animation: legraise-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-childpose { animation: childpose-anim 3s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-birddogarm { animation: birddogarm-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-birddogleg { animation: birddogleg-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-cobra { animation: cobra-anim 3s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-superman { animation: superman-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-chairarch { animation: chairarch-anim 3s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-forwardfold { animation: forwardfold-anim 3s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-wallsit { animation: wallsit-anim 2.5s infinite ease-in-out; animation-play-state: running; }
+    #modal-video-anim-container .svg-anim-standingstretch { animation: standingstretch-anim 3s infinite ease-in-out; animation-play-state: running; }
   </style>
 </head>
 <body>
