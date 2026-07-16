@@ -324,6 +324,24 @@
       border-color: var(--color-primary-light) !important;
       font-weight: 700;
     }
+    
+    /* SVG Keyframe Animations */
+    @keyframes neck-tilt-anim {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-22deg); }
+    }
+    @keyframes knees-twist-anim {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-20deg); }
+    }
+    @keyframes bridge-lift-anim {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+    @keyframes spine-arch-anim {
+      0%, 100% { d: path("M35 55 Q50 35 65 55"); }
+      50% { d: path("M35 55 Q50 68 65 55"); }
+    }
   </style>
 </head>
 <body>
@@ -563,8 +581,8 @@
       </div>
       
       <div style="background: #0f172a; border-radius: var(--border-radius-md); overflow: hidden; aspect-ratio: 16/9; position: relative; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,0.05);">
-        <!-- Exercise Image Illustration Preview -->
-        <img id="modal-video-img" src="" alt="Demonstração" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: contain; opacity: 0.35; z-index: 0; pointer-events: none;">
+        <!-- Exercise Animation Container Preview -->
+        <div id="modal-video-anim-container" style="position: absolute; top:0; left:0; width:100%; height:100%; opacity: 0.25; z-index: 0; pointer-events: none; display: flex; align-items: center; justify-content: center; padding: 40px;"></div>
         
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; color: #fff; z-index: 1; position: relative;">
           <div style="border: 2px dashed rgba(20, 184, 166, 0.4); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: pulse-slow 3s infinite ease-in-out; margin-bottom: 12px; background: rgba(15, 23, 42, 0.6);">
@@ -645,6 +663,69 @@
       }
     };
 
+    function getExerciseSVG(exerciseName, category) {
+      const nameLower = exerciseName.toLowerCase();
+      
+      // 1. Cat-Cow (Gato e Vaca / Gato-Vaca)
+      if (nameLower.indexOf("gato") !== -1 || nameLower.indexOf("vaca") !== -1) {
+        return `
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <line x1="15" y1="80" x2="85" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+            <line x1="35" y1="80" x2="35" y2="55" stroke="#94a3b8" stroke-width="5" stroke-linecap="round" />
+            <line x1="65" y1="80" x2="65" y2="55" stroke="#94a3b8" stroke-width="5" stroke-linecap="round" />
+            <path d="M35 55 Q50 55 65 55" fill="none" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" style="animation: spine-arch-anim 3s infinite ease-in-out;" />
+            <circle cx="72" cy="50" r="6" fill="#cbd5e1" />
+          </svg>
+        `;
+      }
+      
+      // 2. Neck Stretch (Pescoço / Cervical / Nuca / Ombros / Trapézio)
+      if (category === 'pescoco' || nameLower.indexOf("pescoço") !== -1 || nameLower.indexOf("cervical") !== -1 || nameLower.indexOf("nuca") !== -1 || nameLower.indexOf("ombro") !== -1 || nameLower.indexOf("trapézio") !== -1) {
+        return `
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <path d="M30 85 C35 70, 65 70, 70 85 Z" fill="#94a3b8" />
+            <line x1="50" y1="70" x2="50" y2="45" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round" />
+            <circle cx="50" cy="32" r="10" fill="var(--color-primary-light)" style="transform-origin: 50px 45px; animation: neck-tilt-anim 3s infinite ease-in-out;" />
+          </svg>
+        `;
+      }
+      
+      // 3. Glute Bridge (Ponte / Pélvica / Joelho / Articulação / Quadril)
+      if (category === 'articulacao' || nameLower.indexOf("ponte") !== -1 || nameLower.indexOf("pélvica") !== -1 || nameLower.indexOf("joelho") !== -1 || nameLower.indexOf("articulação") !== -1 || nameLower.indexOf("quadril") !== -1) {
+        return `
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+            <circle cx="25" cy="74" r="6" fill="#94a3b8" />
+            <g style="animation: bridge-lift-anim 2.5s infinite ease-in-out; transform-origin: 25px 74px;">
+              <line x1="31" y1="74" x2="60" y2="74" stroke="var(--color-primary-light)" stroke-width="8" stroke-linecap="round" />
+              <line x1="60" y1="74" x2="72" y2="80" stroke="#cbd5e1" stroke-width="6" stroke-linecap="round" />
+            </g>
+          </svg>
+        `;
+      }
+      
+      // 4. Lying Hip Twist (Torção)
+      if (nameLower.indexOf("torção") !== -1) {
+        return `
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <line x1="10" y1="80" x2="90" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+            <circle cx="20" cy="75" r="6" fill="#94a3b8" />
+            <line x1="26" y1="75" x2="60" y2="75" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round" />
+            <path d="M55 75 L70 55 L82 75" fill="none" stroke="var(--color-primary-light)" stroke-width="6" stroke-linecap="round" style="transform-origin: 55px 75px; animation: knees-twist-anim 3s infinite ease-in-out;" />
+          </svg>
+        `;
+      }
+      
+      // 5. Default Spine stretch representation (for all other back/spine/posture exercises)
+      return `
+        <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+          <line x1="15" y1="80" x2="85" y2="80" stroke="var(--color-primary)" stroke-width="3" />
+          <path d="M25 78 C30 55, 60 55, 75 78 Z" fill="none" stroke="var(--color-primary-light)" stroke-width="5" stroke-linecap="round" style="animation: spine-arch-anim 3.5s infinite ease-in-out;" />
+          <circle cx="75" cy="70" r="5" fill="#94a3b8" />
+        </svg>
+      `;
+    }
+
     function selectDay(dayKey) {
       // Update active day button
       const dayCards = document.querySelectorAll('.day-card');
@@ -658,23 +739,21 @@
       exercisesList.innerHTML = '';
       
       data.exercises.forEach(ex => {
-        // Find matching illustration image
-        let imgSrc = "product-cover.png";
+        // Determine category based on name
+        let cat = 'lombar';
         const nameLower = ex.name.toLowerCase();
-        if (nameLower.indexOf("torção") !== -1 || nameLower.indexOf("lombar") !== -1 || nameLower.indexOf("gato-vaca") !== -1 || nameLower.indexOf("criança") !== -1 || nameLower.indexOf("torácica") !== -1 || nameLower.indexOf("cobra") !== -1) {
-          imgSrc = "exercise_lombar.png";
-        } else if (nameLower.indexOf("pescoço") !== -1 || nameLower.indexOf("cervical") !== -1 || nameLower.indexOf("nuca") !== -1 || nameLower.indexOf("ombro") !== -1 || nameLower.indexOf("peito") !== -1 || nameLower.indexOf("peitoral") !== -1) {
-          imgSrc = "exercise_cervical.png";
-        } else if (nameLower.indexOf("ponte") !== -1 || nameLower.indexOf("pélvica") !== -1 || nameLower.indexOf("joelho") !== -1 || nameLower.indexOf("articulação") !== -1 || nameLower.indexOf("quadril") !== -1 || nameLower.indexOf("wall sit") !== -1 || nameLower.indexOf("isometria") !== -1 || nameLower.indexOf("flexor") !== -1) {
-          imgSrc = "exercise_articulacao.png";
+        if (nameLower.indexOf("pescoço") !== -1 || nameLower.indexOf("cervical") !== -1 || nameLower.indexOf("nuca") !== -1 || nameLower.indexOf("ombro") !== -1 || nameLower.indexOf("trapézio") !== -1) {
+          cat = 'pescoco';
+        } else if (nameLower.indexOf("ponte") !== -1 || nameLower.indexOf("pélvica") !== -1 || nameLower.indexOf("joelho") !== -1 || nameLower.indexOf("articulação") !== -1 || nameLower.indexOf("quadril") !== -1) {
+          cat = 'articulacao';
         }
 
         const step = document.createElement('div');
         step.className = 'exercise-step';
         step.innerHTML = `
           <div class="exercise-num">${ex.num}</div>
-          <div class="exercise-img-wrapper" style="width: 100px; height: 70px; border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <img src="${imgSrc}" alt="${ex.name}" style="width: 100%; height: 100%; object-fit: contain;">
+          <div class="exercise-img-wrapper" style="width: 100px; height: 70px; border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #0f172a; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 5px;">
+            ${getExerciseSVG(ex.name, cat)}
           </div>
           <div class="exercise-info">
             <h4>${ex.name}</h4>
@@ -696,18 +775,17 @@
       document.getElementById('modal-video-title').textContent = "Visualização de Postura";
       document.getElementById('modal-video-exercise-name').textContent = exerciseName;
       
-      // Determine the illustration image based on exercise name
-      const imgElement = document.getElementById('modal-video-img');
+      // Determine the illustration animation based on exercise name
+      const animContainer = document.getElementById('modal-video-anim-container');
       const nameLower = exerciseName.toLowerCase();
-      if (nameLower.indexOf("torção") !== -1 || nameLower.indexOf("lombar") !== -1) {
-        imgElement.src = "exercise_lombar.png";
-      } else if (nameLower.indexOf("pescoço") !== -1 || nameLower.indexOf("cervical") !== -1 || nameLower.indexOf("alongamento lateral") !== -1 || nameLower.indexOf("nuca") !== -1) {
-        imgElement.src = "exercise_cervical.png";
-      } else if (nameLower.indexOf("ponte") !== -1 || nameLower.indexOf("pélvica") !== -1 || nameLower.indexOf("articulação") !== -1 || nameLower.indexOf("quadril") !== -1) {
-        imgElement.src = "exercise_articulacao.png";
-      } else {
-        imgElement.src = "product-cover.png";
+      let cat = 'lombar';
+      if (nameLower.indexOf("pescoço") !== -1 || nameLower.indexOf("cervical") !== -1 || nameLower.indexOf("nuca") !== -1 || nameLower.indexOf("ombro") !== -1 || nameLower.indexOf("trapézio") !== -1) {
+        cat = 'pescoco';
+      } else if (nameLower.indexOf("ponte") !== -1 || nameLower.indexOf("pélvica") !== -1 || nameLower.indexOf("joelho") !== -1 || nameLower.indexOf("articulação") !== -1 || nameLower.indexOf("quadril") !== -1) {
+        cat = 'articulacao';
       }
+      
+      animContainer.innerHTML = getExerciseSVG(exerciseName, cat);
       
       const timerElement = document.getElementById('timer');
       const progressElement = document.getElementById('video-progress');
